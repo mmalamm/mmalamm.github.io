@@ -39,7 +39,7 @@ const handChecker = userInput => {
   case 5:
     const comboChecker = (() => {
       const countChecker = (val, qty) => arr.filter(c => c.value === val).length === qty;
-      let isStraight = (input => {
+      const isStraight = (input => {
           let checker = [
             'Ace',
             'Two',
@@ -60,12 +60,8 @@ const handChecker = userInput => {
           let i = checker.indexOf(uniqs[0]);
           return _.isEqual(uniqs, checker.slice(i, i + 5));
         })(arr),
-        isFlush = (input => {
-          return _.uniq(input.map(c => c.suit)).length === 1;
-        })(arr),
-        isRoyalFlush = (input => {
-          return isFlush && isStraight;
-        })(arr);
+        isFlush = _.uniq(arr.map(c => c.suit)).length === 1,
+        isRoyalFlush = isFlush && isStraight;
       if (isRoyalFlush) {
         let str = maxRank(arr);
         return {
@@ -88,7 +84,7 @@ const handChecker = userInput => {
           name: `Straight to ${mainCard.value} of ${mainCard.suit}`
         };
       }
-      let isHouse = (input => {
+      const isHouse = (input => {
         let twoVals = uniqs.length === 2;
         let hasTrip = countChecker(uniqs[0], 3) || countChecker(uniqs[1], 3);
         let hasDub = countChecker(uniqs[0], 2) || countChecker(uniqs[1], 2);
@@ -104,7 +100,7 @@ const handChecker = userInput => {
           name: `House of ${trip}`
         };
       }
-      let isBomb = (input => {
+      const isBomb = (input => {
         let twoVals = uniqs.length === 2;
         let hasQuad = countChecker(uniqs[0], 4) || countChecker(uniqs[1], 4);
         return twoVals && hasQuad;
@@ -121,8 +117,7 @@ const handChecker = userInput => {
       }
       return null;
     })();
-    if (!comboChecker)
-      return null;
+    if (!comboChecker) return null;
     str = comboChecker.strength;
     name = comboChecker.name;
     return new Hand('Combo', arr, str, name);
