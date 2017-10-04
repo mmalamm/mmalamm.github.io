@@ -30,15 +30,7 @@ const Card = props => {
       props.suit === 'Hearts' ?
       'red':
       'black',
-    backgroundColor: 'white',
-    border: '.01rem solid gray',
-    margin: '.2rem',
-    marginLeft: '-1rem',
-    marginTop: props.selected ? '0rem':'1rem',
-    borderRadius: '.3rem',
-    width: '4rem',
-    boxShadow: '-.1rem .2rem 1rem gray',
-    cursor: 'pointer'
+    marginTop: props.selected ? '0rem':'1rem'
   };
   let none = 'none';
   let unselectable = {
@@ -49,7 +41,8 @@ const Card = props => {
     marginLeft: '1rem'
   };
   return (
-    <div style={styles}>
+    <div style={styles}
+      className="card">
       <p style={unselectable}>
         {valsObj[props.value]}
       </p>

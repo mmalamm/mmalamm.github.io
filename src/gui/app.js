@@ -46,7 +46,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Big 2 Hand Checker</h1>
         <p>Select some cards to check a hand!</p>
         <div>

@@ -22179,7 +22179,7 @@ var App = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         _react2.default.createElement(
           'h1',
           null,
@@ -22310,15 +22310,7 @@ var Card = function Card(props) {
 
   var styles = {
     color: props.suit === 'Diamonds' || props.suit === 'Hearts' ? 'red' : 'black',
-    backgroundColor: 'white',
-    border: '.01rem solid gray',
-    margin: '.2rem',
-    marginLeft: '-1rem',
-    marginTop: props.selected ? '0rem' : '1rem',
-    borderRadius: '.3rem',
-    width: '4rem',
-    boxShadow: '-.1rem .2rem 1rem gray',
-    cursor: 'pointer'
+    marginTop: props.selected ? '0rem' : '1rem'
   };
   var none = 'none';
   var unselectable = {
@@ -22330,7 +22322,8 @@ var Card = function Card(props) {
   };
   return _react2.default.createElement(
     'div',
-    { style: styles },
+    { style: styles,
+      className: 'card' },
     _react2.default.createElement(
       'p',
       { style: unselectable },
