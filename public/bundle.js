@@ -22001,6 +22001,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var compRank = function compRank(a, b) {
   return a.rank() - b.rank();
 };
+var ordRank = function ordRank(a, b) {
+  return a.ord - b.ord;
+};
 
 var Deck = function () {
   function Deck() {
@@ -22012,11 +22015,13 @@ var Deck = function () {
     var cardSuits = ['Diamonds', 'Clovers', 'Hearts', 'Spades'];
     var cardVals = ['Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace', 'Two'];
     var i = 0;
+    var x = 8;
     cardVals.forEach(function (cardVal) {
       cardSuits.forEach(function (cardSuit) {
-        var card = new _card2.default(cardSuit, cardVal, i);
+        var card = new _card2.default(cardSuit, cardVal, i, x % 52);
         _this.cards.push(card);
         i++;
+        x++;
       });
     });
     this.shuffle();
@@ -22039,7 +22044,7 @@ var Deck = function () {
   }, {
     key: 'deal',
     value: function deal() {
-      return this.shuffle().cards.slice().splice(0, 13).sort(compRank);
+      return this.shuffle().cards.slice().splice(0, 13).sort(ordRank);
     }
   }]);
 
@@ -22061,7 +22066,7 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Card = function Card(suit, value, rank) {
+var Card = function Card(suit, value, rank, ord) {
   _classCallCheck(this, Card);
 
   this.suit = suit;
@@ -22072,7 +22077,8 @@ var Card = function Card(suit, value, rank) {
   return Object.freeze({
     suit: suit,
     value: value,
-    rank: this.rank
+    rank: this.rank,
+    ord: ord
   });
 };
 
@@ -22233,7 +22239,7 @@ var App = function (_React$Component) {
           null,
           this.state.validSubmit && _react2.default.createElement(
             'div',
-            null,
+            { className: 'centered' },
             _react2.default.createElement(
               'p',
               null,

@@ -1,5 +1,5 @@
 class Card {
-  constructor(suit, value, rank) {
+  constructor(suit, value, rank, ord) {
     this.suit = suit;
     this.value = value;
     this.rank = () => {
@@ -8,7 +8,8 @@ class Card {
     return Object.freeze({
       suit,
       value,
-      rank: this.rank
+      rank: this.rank,
+      ord
     });
   }
 }

@@ -79,7 +79,7 @@ class App extends React.Component {
         </div>
         <div>
           { this.state.validSubmit && (
-            <div>
+            <div className="centered">
               <p>{this.state.validSubmit.name}</p>
               <form>
                 {
