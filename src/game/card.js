@@ -1,7 +1,5 @@
 class Card {
   constructor(suit, value, rank, ord) {
-    this.suit = suit;
-    this.value = value;
     this.rank = () => {
       return rank;
     };

@@ -57,8 +57,11 @@ const handChecker = userInput => {
             'Ace',
             'Two'
           ];
+          let ords = input.sort((a,b)=>a.ord-b.ord).map(c=>c.value);
           let i = checker.indexOf(uniqs[0]);
-          return _.isEqual(uniqs, checker.slice(i, i + 5));
+          let j = checker.indexOf(ords[0]);
+          return _.isEqual(uniqs, checker.slice(i, i + 5)) ||
+            _.isEqual(ords, checker.slice(j, j + 5));
         })(arr),
         isFlush = _.uniq(arr.map(c => c.suit)).length === 1,
         isRoyalFlush = isFlush && isStraight;

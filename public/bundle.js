@@ -22069,8 +22069,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Card = function Card(suit, value, rank, ord) {
   _classCallCheck(this, Card);
 
-  this.suit = suit;
-  this.value = value;
   this.rank = function () {
     return rank;
   };
@@ -22418,8 +22416,14 @@ var handChecker = function handChecker(userInput) {
         };
         var isStraight = function (input) {
           var checker = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace', 'Two'];
+          var ords = input.sort(function (a, b) {
+            return a.ord - b.ord;
+          }).map(function (c) {
+            return c.value;
+          });
           var i = checker.indexOf(uniqs[0]);
-          return _.isEqual(uniqs, checker.slice(i, i + 5));
+          var j = checker.indexOf(ords[0]);
+          return _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
         }(arr),
             isFlush = _.uniq(arr.map(function (c) {
           return c.suit;
