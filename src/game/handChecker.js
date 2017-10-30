@@ -38,7 +38,6 @@ const handChecker = userInput => {
     return new Hand('Triple', arr, 300 + str, name);
   case 5:
     const comboChecker = (() => {
-      const countChecker = (val, qty) => arr.filter(c => c.value === val).length === qty;
       const isStraight = (input => {
           let checker = [
             'Ace',
@@ -80,13 +79,14 @@ const handChecker = userInput => {
         };
       }
       if (isStraight) {
-        let str = maxRank(arr);
-        let mainCard = arr.find(c => c.rank() === str);
+        let mainCard = arr[4];
+        let str = mainCard.rank();
         return {
           strength: str + 400,
           name: `Straight to ${mainCard.value} of ${mainCard.suit}`
         };
       }
+      const countChecker = (val, qty) => arr.filter(c => c.value === val).length === qty;
       const isHouse = (input => {
         let twoVals = uniqs.length === 2;
         let hasTrip = countChecker(uniqs[0], 3) || countChecker(uniqs[1], 3);

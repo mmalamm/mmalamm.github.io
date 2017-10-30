@@ -22409,11 +22409,6 @@ var handChecker = function handChecker(userInput) {
       return new Hand('Triple', arr, 300 + str, name);
     case 5:
       var comboChecker = function () {
-        var countChecker = function countChecker(val, qty) {
-          return arr.filter(function (c) {
-            return c.value === val;
-          }).length === qty;
-        };
         var isStraight = function (input) {
           var checker = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace', 'Two'];
           var ords = input.sort(function (a, b) {
@@ -22444,15 +22439,18 @@ var handChecker = function handChecker(userInput) {
           };
         }
         if (isStraight) {
-          var _str3 = maxRank(arr);
-          var mainCard = arr.find(function (c) {
-            return c.rank() === _str3;
-          });
+          var mainCard = arr[4];
+          var _str3 = mainCard.rank();
           return {
             strength: _str3 + 400,
             name: 'Straight to ' + mainCard.value + ' of ' + mainCard.suit
           };
         }
+        var countChecker = function countChecker(val, qty) {
+          return arr.filter(function (c) {
+            return c.value === val;
+          }).length === qty;
+        };
         var isHouse = function (input) {
           var twoVals = uniqs.length === 2;
           var hasTrip = countChecker(uniqs[0], 3) || countChecker(uniqs[1], 3);
