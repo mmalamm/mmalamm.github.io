@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './cardComponent';
 import handChecker from '../game/handChecker';
+import validHands from '../game/validHands';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,8 +9,10 @@ class App extends React.Component {
     this.handleClear = this.handleClear.bind(this);
     this.newDeal = this.newDeal.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
+    const dealtHand = this.props.deck.deal();
+    console.log(validHands(dealtHand, 2));
     this.state = {
-      hand: this.props.deck.deal(),
+      hand: dealtHand,
       userSelection: [],
       validSubmit: null
     };
@@ -17,8 +20,10 @@ class App extends React.Component {
 
   newDeal(e) {
     e.preventDefault();
+    const dealtHand = this.props.deck.deal();
+    console.log(validHands(dealtHand, 2));
     this.setState(() => ({
-      hand: this.props.deck.deal(),
+      hand: dealtHand,
       userSelection: [],
       validSubmit: null
     }));
