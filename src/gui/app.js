@@ -12,7 +12,12 @@ class App extends React.Component {
     const dealtHand = this.props.deck.deal();
     console.log("cards:", dealtHand);
     window.currentValidHands = validHands(dealtHand, 2);
-    console.log(currentValidHands);
+    window.straights = currentValidHands
+      .filter(h => h._type === "Combo")
+      .filter(h => h.name.slice(0, 8) === "Straight");
+    // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
+    console.log("valid hands:", currentValidHands);
+    console.log("straights:", straights)
     this.state = {
       hand: dealtHand,
       userSelection: [],
@@ -25,7 +30,12 @@ class App extends React.Component {
     const dealtHand = this.props.deck.deal();
     console.log("cards:", dealtHand);
     window.currentValidHands = validHands(dealtHand, 2);
-    console.log(currentValidHands);
+    window.straights = currentValidHands
+      .filter(h => h._type === "Combo")
+      .filter(h => h.name.slice(0, 8) === "Straight");
+    // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
+    console.log("valid hands:", currentValidHands);
+    console.log("straights:", straights)
     this.setState(() => ({
       hand: dealtHand,
       userSelection: [],

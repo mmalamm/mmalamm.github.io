@@ -1316,7 +1316,7 @@ var handChecker = function handChecker(userInput) {
           });
           var i = checker.indexOf(uniqs[0]);
           var j = checker.indexOf(ords[0]);
-          return vals.length === 5 && _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
+          return uniqs.length === 5 && _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
         }(arr),
             isFlush = _.uniq(arr.map(function (c) {
           return c.suit;
@@ -22286,7 +22286,14 @@ var App = function (_React$Component) {
     var dealtHand = _this.props.deck.deal();
     console.log("cards:", dealtHand);
     window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
-    console.log(currentValidHands);
+    window.straights = currentValidHands.filter(function (h) {
+      return h._type === "Combo";
+    }).filter(function (h) {
+      return h.name.slice(0, 8) === "Straight";
+    });
+    // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
+    console.log("valid hands:", currentValidHands);
+    console.log("straights:", straights);
     _this.state = {
       hand: dealtHand,
       userSelection: [],
@@ -22302,7 +22309,14 @@ var App = function (_React$Component) {
       var dealtHand = this.props.deck.deal();
       console.log("cards:", dealtHand);
       window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
-      console.log(currentValidHands);
+      window.straights = currentValidHands.filter(function (h) {
+        return h._type === "Combo";
+      }).filter(function (h) {
+        return h.name.slice(0, 8) === "Straight";
+      });
+      // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
+      console.log("valid hands:", currentValidHands);
+      console.log("straights:", straights);
       this.setState(function () {
         return {
           hand: dealtHand,
