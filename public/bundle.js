@@ -1316,7 +1316,7 @@ var handChecker = function handChecker(userInput) {
           });
           var i = checker.indexOf(uniqs[0]);
           var j = checker.indexOf(ords[0]);
-          return _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
+          return vals.length === 5 && _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
         }(arr),
             isFlush = _.uniq(arr.map(function (c) {
           return c.suit;
@@ -22228,6 +22228,7 @@ var Card = function Card(suit, value, rank, ord) {
     suit: suit,
     value: value,
     rank: this.rank,
+    _rank: rank,
     ord: ord
   });
 };
@@ -22283,7 +22284,9 @@ var App = function (_React$Component) {
     _this.newDeal = _this.newDeal.bind(_this);
     _this.toggleSelect = _this.toggleSelect.bind(_this);
     var dealtHand = _this.props.deck.deal();
-    console.log((0, _validHands2.default)(dealtHand, 2));
+    console.log("cards:", dealtHand);
+    window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
+    console.log(currentValidHands);
     _this.state = {
       hand: dealtHand,
       userSelection: [],
@@ -22297,7 +22300,9 @@ var App = function (_React$Component) {
     value: function newDeal(e) {
       e.preventDefault();
       var dealtHand = this.props.deck.deal();
-      console.log((0, _validHands2.default)(dealtHand, 2));
+      console.log("cards:", dealtHand);
+      window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
+      console.log(currentValidHands);
       this.setState(function () {
         return {
           hand: dealtHand,

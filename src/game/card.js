@@ -7,6 +7,7 @@ class Card {
       suit,
       value,
       rank: this.rank,
+      _rank: rank,
       ord
     });
   }
