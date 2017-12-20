@@ -1271,7 +1271,10 @@ var maxRank = function maxRank(cards) {
   return cards.slice().sort(compRank).pop().rank();
 };
 
-var _ = { uniq: _uniq2.default, isEqual: _isEqual2.default };
+var _ = {
+  uniq: _uniq2.default,
+  isEqual: _isEqual2.default
+};
 
 var Hand = function Hand(type, cards, strength, name) {
   _classCallCheck(this, Hand);
@@ -1308,6 +1311,7 @@ var handChecker = function handChecker(userInput) {
     case 5:
       var comboChecker = function () {
         var isStraight = function (input) {
+          if (uniqs.length !== 5) return false;
           var checker = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace', 'Two'];
           var ords = input.sort(function (a, b) {
             return a.ord - b.ord;
@@ -1316,7 +1320,7 @@ var handChecker = function handChecker(userInput) {
           });
           var i = checker.indexOf(uniqs[0]);
           var j = checker.indexOf(ords[0]);
-          return uniqs.length === 5 && _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
+          return _.isEqual(uniqs, checker.slice(i, i + 5)) || _.isEqual(ords, checker.slice(j, j + 5));
         }(arr),
             isFlush = _.uniq(arr.map(function (c) {
           return c.suit;
@@ -1337,7 +1341,9 @@ var handChecker = function handChecker(userInput) {
           };
         }
         if (isStraight) {
-          var mainCard = arr[4];
+          var mainCard = arr.filter(function (c) {
+            return c.rank() === maxRank(arr);
+          })[0];
           var _str3 = mainCard.rank();
           return {
             strength: _str3 + 400,
