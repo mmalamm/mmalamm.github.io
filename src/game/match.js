@@ -4,7 +4,7 @@ class Match {
     this.winner = null;
     this.result = {};
     this.currentPlayer = null;
-    this.records = [];
+    this.pile = [];
     this.tracker = {
       turn: 0,
       round: null
@@ -27,9 +27,9 @@ class Match {
   }
 
   promptPlayer(player) {
-    // async get player input, returns hand object
+    let hand = await player.getTurn()// async get player input, returns hand object
     verifyHand(hand);
-    pile.push(hand);
+    this.pile.push(hand);
 
     checkWinner();
 
@@ -47,7 +47,7 @@ class Match {
           card.value === 'three'
         );
       })[0];
-      promptPlayer(currentPlayer);
+      this.promptPlayer(currentPlayer);
     }
 
     while (!winner) {

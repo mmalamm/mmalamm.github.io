@@ -10,6 +10,9 @@ class App extends React.Component {
     this.newDeal = this.newDeal.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
     const dealtHand = this.props.deck.deal();
+
+
+    ////
     console.log("cards:", dealtHand);
     window.currentValidHands = validHands(dealtHand, 2);
     window.straights = currentValidHands
@@ -18,6 +21,9 @@ class App extends React.Component {
     // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
     console.log("valid hands:", currentValidHands);
     console.log("straights:", straights)
+    ///
+
+
     this.state = {
       hand: dealtHand,
       userSelection: [],
@@ -28,6 +34,9 @@ class App extends React.Component {
   newDeal(e) {
     e.preventDefault();
     const dealtHand = this.props.deck.deal();
+
+
+    ////
     console.log("cards:", dealtHand);
     window.currentValidHands = validHands(dealtHand, 2);
     window.straights = currentValidHands
@@ -36,6 +45,9 @@ class App extends React.Component {
     // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
     console.log("valid hands:", currentValidHands);
     console.log("straights:", straights)
+    ////
+
+
     this.setState(() => ({
       hand: dealtHand,
       userSelection: [],
