@@ -14,7 +14,6 @@ class Match {
   verifyHand(arr) {
     checkHand(arr);
     // perform checks and returns hand object or reprompts player until hand is good;
-    // can even create timer
   }
 
   checkWinner() {
