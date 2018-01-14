@@ -8,7 +8,7 @@ class Game {
   }
 
   addPlayer(user) {
-    this.players.push(new Player(user))
+    this.players.push(new Player(user));
   }
 
   play() {
