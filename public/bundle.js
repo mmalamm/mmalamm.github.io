@@ -22290,6 +22290,8 @@ var App = function (_React$Component) {
     _this.newDeal = _this.newDeal.bind(_this);
     _this.toggleSelect = _this.toggleSelect.bind(_this);
     var dealtHand = _this.props.deck.deal();
+
+    ////
     console.log("cards:", dealtHand);
     window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
     window.straights = currentValidHands.filter(function (h) {
@@ -22300,6 +22302,9 @@ var App = function (_React$Component) {
     // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
     console.log("valid hands:", currentValidHands);
     console.log("straights:", straights);
+    ///
+
+
     _this.state = {
       hand: dealtHand,
       userSelection: [],
@@ -22313,6 +22318,8 @@ var App = function (_React$Component) {
     value: function newDeal(e) {
       e.preventDefault();
       var dealtHand = this.props.deck.deal();
+
+      ////
       console.log("cards:", dealtHand);
       window.currentValidHands = (0, _validHands2.default)(dealtHand, 2);
       window.straights = currentValidHands.filter(function (h) {
@@ -22323,6 +22330,9 @@ var App = function (_React$Component) {
       // straights.filter(s => _.uniq(s.cards.map(c => c.value)).length === 5);
       console.log("valid hands:", currentValidHands);
       console.log("straights:", straights);
+      ////
+
+
       this.setState(function () {
         return {
           hand: dealtHand,

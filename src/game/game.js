@@ -5,6 +5,8 @@ class Game {
     const p0 = new Player(user);
     this.players = [p0];
     this.history = [];
+    this.currentMatch = null;
+    this.keepPlaying = true;
   }
 
   addPlayer(user) {
@@ -12,8 +14,11 @@ class Game {
   }
 
   play() {
-    const match = new Match(this.players);
-    return await match.run()
+    while(this.keepPlaying) {
+      const match = new Match(this.players);
+      this.currentMatch = match;
+      match.run();
+    }
   }
 
 
