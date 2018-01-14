@@ -31,7 +31,7 @@ class Deck {
         x++;
       });
     });
-    this.shuffle();
+    this.shuffle()
   }
 
   shuffle() {
