@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="container">
         {this.props.game.players.map((p, i) => (
           <PlayerPanel key={i} player={p} />
         ))}

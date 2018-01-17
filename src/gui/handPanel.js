@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./cardComponent";
 import handChecker from "../game/handChecker";
+import TurnPanel from "./turnPanel";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class HandPanel extends Component {
   }
 
   toggleSelect = card => {
+    // const vs = this.state.validSubmit;
+    // this.props.validSubmit(vs);
     return e =>
       this.setState(prevState => {
         let newSelection =
@@ -40,6 +43,7 @@ class HandPanel extends Component {
             );
           })}
         </form>
+        <TurnPanel validHand={this.state.validSubmit} />
       </div>
     );
   }
