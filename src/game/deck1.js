@@ -45,9 +45,10 @@ class Deck {
     return this;
   }
 
-  deal() {
-    // return this.shuffle().cards.slice().splice(0, 13).sort(ordRank);
-    return _.chunk(this.shuffle().cards.slice(), 13);
+  deal(players) {
+    const hands = _.chunk(this.shuffle().cards.slice(), 13)
+      .map(h => h.sort(ordRank));
+    players.forEach((player, i) => player.hand = hands[i]);
   }
 }
 
