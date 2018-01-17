@@ -1,4 +1,5 @@
-import Player from './player.js';
+import Player from "./player";
+import Match from "./match1";
 
 class Game {
   constructor(user) {
@@ -14,12 +15,9 @@ class Game {
   }
 
   play() {
-    while(this.keepPlaying) {
-      const match = new Match(this.players);
-      this.currentMatch = match;
-      match.run();
-    }
+    const match = new Match(this.players);
+    this.currentMatch = match;
   }
-
-
 }
+
+export default Game;

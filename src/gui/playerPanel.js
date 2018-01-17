@@ -4,12 +4,15 @@ import HandPanel from './handPanel';
 
 class PlayerPanel extends Component {
   constructor(props) {
+    console.log(props);
+    super(props);
     this.player = props.player;
-    this.cards = props.player.cards;
+    this.cards = props.player.hand;
     this.validHand = null
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         <TurnPanel validHand={this.validHand} />

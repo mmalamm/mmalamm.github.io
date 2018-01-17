@@ -1,26 +1,26 @@
-import React from 'react';
-import Card from './cardComponent';
-import handChecker from '../game/handChecker';
-import validHands from '../game/validHands';
-import PlayerPanel from './playerPanel.js';
+import React from "react";
+import Card from "./cardComponent";
+import handChecker from "../game/handChecker";
+import validHands from "../game/validHands";
+import PlayerPanel from "./playerPanel.js";
 
 class App extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
-      match: props.match
-    }
+      game: props.game
+    };
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
-        {this
-          .state
-          .match
-          .players
-          .map(p => <PlayerPanel player={p}/>)}
+        {this.props.game.players.map((p, i) => (
+          <PlayerPanel key={i} player={p} />
+        ))}
       </div>
-    )
+    );
   }
 }
 

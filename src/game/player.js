@@ -3,5 +3,6 @@ class Player {
     this.name = user;
     this.points = 100;
   }
-  
 }
+
+export default Player;
