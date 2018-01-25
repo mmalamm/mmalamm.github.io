@@ -5,7 +5,7 @@ class Match {
     this.winner = null;
     this.result = {};
     this.tracker = {
-      turn: 0,
+      turns: [],
       currentPlayer: null,
       round: null
     };
@@ -14,10 +14,19 @@ class Match {
     deck.deal(this.players);
   }
 
+  getTurn(p) {
+    
+  }
+
   run() {
     this.tracker.currentPlayer = this.players.find(p =>
       p.hand.includes(c => c.suit === "Diamonds" && c.value === "Three")
     );
+    const cP = this.tracker.currentPlayer;
+    
+    while(!(this.winner)) {
+      this.getTurn(cP).then
+    }
   }
 }
 

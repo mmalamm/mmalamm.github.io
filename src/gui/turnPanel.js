@@ -12,9 +12,6 @@ class TurnPanel extends Component {
     return !(this.props.validHand === nextProps.validHand)
   }
   componentWillReceiveProps(nextProps) {
-    // if (this.props.validHand === nextProps.validHand) {
-    //   return;
-    // }
     this.setState({ validSubmit: nextProps.validHand });
   }
   render() {

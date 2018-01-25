@@ -18,9 +18,9 @@ class Match {
 
   checkWinner() {
     let winner = this.players
-      .filter(
+      .find(
       player => player.hand.length === 0
-      )[0];
+      );
     if (winner) return winner;
     return null;
   }
