@@ -15,7 +15,6 @@ class TurnPanel extends Component {
     this.setState({ validSubmit: nextProps.validHand });
   }
   render() {
-    console.log(this.props);
     const jsxContent = this.state.validSubmit ? (
       <div>
         <p>{this.state.validSubmit.name}</p>

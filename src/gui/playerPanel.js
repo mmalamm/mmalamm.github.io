@@ -15,16 +15,16 @@ class PlayerPanel extends Component {
     super(props);
     this.player = props.player;
     this.state = {
-      cards: props.player.hand
+      cards: props.player.cards
     };
   }
 
   render() {
     // console.log(this.props);
-    generateValidHands(this.state.cards);
+    // generateValidHands(this.state.cards);
     return (
       <div>
-        <HandPanel cards={this.state.cards} />
+        <HandPanel cards={this.state.cards} playTurn={this.player.playTurn} name={this.player.name} />
       </div>
     );
   }

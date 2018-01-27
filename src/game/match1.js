@@ -1,33 +1,60 @@
 import Deck from "./deck1";
+import {
+  nextPlayer,
+  matchUpdater,
+  getRoundType,
+  broadcast,
+  currentPlayer,
+  trackerUpdater,
+  isValidTurn,
+  isOver,
+  initialBroadcast,
+  getFirstPlayerName
+} from "./lib";
+
 class Match {
   constructor(arr) {
-    this.players = arr;
     this.winner = null;
     this.result = {};
-    this.tracker = {
-      turns: [],
+
+    const _match = {
+      players: arr,
       currentPlayer: null,
-      round: null
+      turns: []
+    };
+    
+    let tracker = {
+      last3Turns: [],
+      currentPlayerName: null,
+      roundType: null,
+      cardsLeft: {}
     };
 
+    this.updateMatch = turn => {
+      if (!isValidTurn(_match, turn)) return;
+      tracker = matchUpdater(_match, turn);
+      broadcast(_match, tracker, this.playTurn);
+      if (isOver(_match)) {
+        // update winner and populate result object
+      }
+    };
+
+
     const deck = new Deck();
-    deck.deal(this.players);
+    deck.deal(_match.players);
+    initialBroadcast(_match, this.playTurn);
+    this.currentPlayerName = getFirstPlayerName(_match);
+    window.match = _match;
+    return this;
   }
 
-  getTurn(p) {
-    
-  }
-
-  run() {
-    this.tracker.currentPlayer = this.players.find(p =>
-      p.hand.includes(c => c.suit === "Diamonds" && c.value === "Three")
-    );
-    const cP = this.tracker.currentPlayer;
-    
-    while(!(this.winner)) {
-      this.getTurn(cP).then
+  playTurn = (turn) => {
+    if (turn.playerName === this.currentPlayerName) {
+      this.updateMatch(turn);
     }
   }
+
+  run() {}
 }
 
 export default Match;
