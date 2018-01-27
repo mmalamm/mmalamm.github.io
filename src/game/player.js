@@ -6,8 +6,9 @@ class Player {
     this.playTurn = () => {};
   }
 
-  update = trkr => {
+  update = (trkr, cards) => {
     Object.keys(trkr).forEach(k => (this.matchStatus[k] = trkr[k]));
+    this.cards = cards;
   };
 }
 

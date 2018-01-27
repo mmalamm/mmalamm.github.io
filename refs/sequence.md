@@ -35,5 +35,5 @@ class Hand {
 Turn:
 {
   playerName: player,
-  payload: hand or pass
+  payload: hand
 }

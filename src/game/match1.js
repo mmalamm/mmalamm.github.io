@@ -33,9 +33,12 @@ class Match {
     this.updateMatch = turn => {
       if (!isValidTurn(_match, turn)) return;
       tracker = matchUpdater(_match, turn);
-      broadcast(_match, tracker, this.playTurn);
+      this.currentPlayerName = _match.currentPlayer.name;
+      broadcast(_match, tracker);
       if (isOver(_match)) {
         // update winner and populate result object
+      } else {
+        return _match.currentPlayer.cards;
       }
     };
 
@@ -45,13 +48,18 @@ class Match {
     initialBroadcast(_match, this.playTurn);
     this.currentPlayerName = getFirstPlayerName(_match);
     window.match = _match;
+    this.tracker = tracker;
     return this;
   }
 
   playTurn = (turn) => {
+    console.log('playTurn inside match has been hit:', turn);
+    console.log(this.currentPlayerName);
+    let remainingCards;
     if (turn.playerName === this.currentPlayerName) {
-      this.updateMatch(turn);
+      remainingCards = this.updateMatch(turn);
     }
+    return remainingCards;
   }
 
   run() {}

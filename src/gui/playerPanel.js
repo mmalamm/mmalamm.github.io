@@ -18,6 +18,14 @@ class PlayerPanel extends Component {
       cards: props.player.cards
     };
   }
+  shouldComponentUpdate(nextProps) {
+    console.log(nextProps);
+    return this.props.player.cards.length !== nextProps.player.cards.length
+  }
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+
+  }
 
   render() {
     // console.log(this.props);

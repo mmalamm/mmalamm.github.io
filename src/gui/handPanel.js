@@ -9,14 +9,19 @@ class HandPanel extends Component {
     this.state = { hand: props.cards, userSelection: [], validSubmit: null };
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
     const turn = {
       playerName: this.props.name,
       payload: this.state.validSubmit
-    }
-    this.props.playTurn(turn);
-  } 
+    };
+    console.log(turn);
+    const updatedHand = this.props.playTurn(turn);
+    console.log(updatedHand);
+    // this.setState({
+    //   hand: updatedHand
+    // });
+  };
 
   toggleSelect = card => {
     // const vs = this.state.validSubmit;
@@ -52,7 +57,12 @@ class HandPanel extends Component {
           })}
         </form>
         <TurnPanel validHand={this.state.validSubmit} />
-        <button disabled={!Boolean(this.state.validSubmit)} onClick={this.handleClick}>Play</button>
+        <button
+          disabled={!Boolean(this.state.validSubmit)}
+          onClick={this.handleClick}
+        >
+          Play
+        </button>
       </div>
     );
   }
