@@ -4,9 +4,7 @@ export const nextPlayer = (match, turn) => {
   return match.players[idx];
 };
 
-const diffCards = (hCs, tCs) => {
-  console.log("hCs:::", hCs);
-  console.log("tCs:::", tCs);
+export const diffCards = (hCs, tCs) => {
   const output = [];
   hCs.forEach(hC => {
     if (!tCs.some(tC => tC.suit === hC.suit && tC.value === hC.value)) {
@@ -18,9 +16,7 @@ const diffCards = (hCs, tCs) => {
 
 const processTurn = (m, t) => {
   const currentPlayer = m.players.find(p => p.name === t.playerName);
-  console.log(currentPlayer);
   const newHand = diffCards(currentPlayer.cards, t.payload.cards);
-  console.log("newHand:::::", newHand);
   currentPlayer.cards = newHand;
 };
 
@@ -34,9 +30,9 @@ export const matchUpdater = (match, turn) => {
 export const getRoundType = match => {
   const hand2beat = match.turns
     .slice(-3)
-    .filter(({ payload: p }) => p._type === "PASS")
+    .filter(turn => turn.payload._type !== 'PASS')
     .pop();
-  return hand2beat ? hand2beat._type : null;
+  return hand2beat ? hand2beat.payload._type : null;
 };
 
 export const broadcast = (match, tracker) => {
@@ -45,19 +41,17 @@ export const broadcast = (match, tracker) => {
   });
 };
 export const getFirstPlayerName = match => {
-  console.log(match);
   const firstPlayerName = match.players.filter(player => {
     return player.cards.find(
       card => card.suit === "Diamonds" && card.value === "Three"
     );
   })[0].name;
-  console.log(firstPlayerName);
   return firstPlayerName;
 };
 export const initialBroadcast = (match, playTurn) => {
   let tracker = {
     last3Turns: [],
-    currentPlayerName: "getFirstPlayerName(match)",
+    currentPlayerName: getFirstPlayerName(match),
     roundType: null,
     cardsLeft: createCardsLeft(match)
   };
@@ -84,18 +78,15 @@ export const trackerUpdater = match => {
 
 export const isValidTurn = (match, turn) => {
   if (turn.payload._type === "PASS") return true;
-  console.log(match);
   if (!handChecker(turn.payload.cards)) return false;
   const hand2beat = match.turns
     .slice(-3)
     .filter(({ payload: p }) => !(p._type === "PASS"))
     .pop();
-  console.log("h2b:::::", hand2beat);
   if (!hand2beat) return true;
   const output =
     hand2beat.payload._type == turn.payload._type &&
     hand2beat.payload._strength < turn.payload._strength;
-  console.log(output);
   return output;
 };
 

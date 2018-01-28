@@ -1,4 +1,5 @@
 import Deck from "./deck1";
+import keyBy from "lodash/keyBy";
 import {
   nextPlayer,
   matchUpdater,
@@ -9,7 +10,8 @@ import {
   isValidTurn,
   isOver,
   initialBroadcast,
-  getFirstPlayerName
+  getFirstPlayerName,
+  diffCards
 } from "./lib";
 
 class Match {
@@ -19,11 +21,12 @@ class Match {
 
     const _match = {
       players: arr,
+      p: keyBy(arr, "name"),
       currentPlayer: null,
       turns: []
     };
-    
-    let tracker = {
+
+    this.tracker = {
       last3Turns: [],
       currentPlayerName: null,
       roundType: null,
@@ -32,35 +35,36 @@ class Match {
 
     this.updateMatch = turn => {
       if (!isValidTurn(_match, turn)) return;
-      tracker = matchUpdater(_match, turn);
-      this.currentPlayerName = _match.currentPlayer.name;
-      broadcast(_match, tracker);
+      const output = diffCards(_match.p[this.tracker.currentPlayerName].cards, turn.payload.cards);
+      console.log('what is this:',this);
+      this.tracker = matchUpdater(_match, turn);
+      console.log('what is tracker:', this.tracker);
+      this.tracker.currentPlayerName = _match.currentPlayer.name;
+      broadcast(_match, this.tracker);
       if (isOver(_match)) {
         // update winner and populate result object
       } else {
-        return _match.currentPlayer.cards;
+        console.log(output);
+        return output;
       }
     };
-
 
     const deck = new Deck();
     deck.deal(_match.players);
     initialBroadcast(_match, this.playTurn);
-    this.currentPlayerName = getFirstPlayerName(_match);
+    this.tracker.currentPlayerName = getFirstPlayerName(_match);
     window.match = _match;
-    this.tracker = tracker;
     return this;
   }
 
-  playTurn = (turn) => {
-    console.log('playTurn inside match has been hit:', turn);
-    console.log(this.currentPlayerName);
+  playTurn = turn => {
+    console.log(this);
     let remainingCards;
-    if (turn.playerName === this.currentPlayerName) {
+    if (turn.playerName === this.tracker.currentPlayerName) {
       remainingCards = this.updateMatch(turn);
     }
     return remainingCards;
-  }
+  };
 
   run() {}
 }

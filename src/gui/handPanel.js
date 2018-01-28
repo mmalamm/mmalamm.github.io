@@ -15,17 +15,15 @@ class HandPanel extends Component {
       playerName: this.props.name,
       payload: this.state.validSubmit
     };
-    console.log(turn);
     const updatedHand = this.props.playTurn(turn);
-    console.log(updatedHand);
-    // this.setState({
-    //   hand: updatedHand
-    // });
+    this.setState({
+      hand: updatedHand,
+      userSelection: [],
+      validSubmit: null
+    });
   };
 
   toggleSelect = card => {
-    // const vs = this.state.validSubmit;
-    // this.props.validSubmit(vs);
     return e =>
       this.setState(prevState => {
         let newSelection =

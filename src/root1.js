@@ -5,7 +5,7 @@ import Game from "./game/game";
 import Deck from "./game/deck";
 const myDeck = new Deck();
 
-const name = "player";
+const name = "momo";
 const game = new Game(name);
 game.addPlayer("nafis");
 game.addPlayer("rishat");
