@@ -18,21 +18,16 @@ class PlayerPanel extends Component {
       cards: props.player.cards
     };
   }
-  shouldComponentUpdate(nextProps) {
-    console.log(nextProps);
-    return this.props.player.cards.length !== nextProps.player.cards.length
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-
-  }
 
   render() {
-    // console.log(this.props);
-    // generateValidHands(this.state.cards);
     return (
       <div>
-        <HandPanel cards={this.state.cards} playTurn={this.player.playTurn} name={this.player.name} />
+        <HandPanel
+          cards={this.state.cards}
+          playTurn={this.player.playTurn}
+          p={this.player}
+          name={this.player.name}
+        />
       </div>
     );
   }

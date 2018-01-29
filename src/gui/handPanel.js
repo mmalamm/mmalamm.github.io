@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "./cardComponent";
 import handChecker from "../game/handChecker";
 import TurnPanel from "./turnPanel";
+import { validateTurn } from "./lib";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -13,11 +14,25 @@ class HandPanel extends Component {
     e.preventDefault();
     const turn = {
       playerName: this.props.name,
+      name: this.state.validSubmit.name,
       payload: this.state.validSubmit
     };
     const updatedHand = this.props.playTurn(turn);
     this.setState({
       hand: updatedHand,
+      userSelection: [],
+      validSubmit: null
+    });
+  };
+  handlePass = e => {
+    e.preventDefault();
+    const pass = handChecker("PASS");
+    const turn = {
+      playerName: this.props.name,
+      payload: pass
+    };
+    this.props.playTurn(turn);
+    this.setState({
       userSelection: [],
       validSubmit: null
     });
@@ -56,11 +71,19 @@ class HandPanel extends Component {
         </form>
         <TurnPanel validHand={this.state.validSubmit} />
         <button
-          disabled={!Boolean(this.state.validSubmit)}
+          // disabled={!Boolean(this.state.validSubmit)}
+          disabled={
+            !validateTurn(
+              this.props.p.matchStatus,
+              this.state.validSubmit,
+              this.props.p
+            )
+          }
           onClick={this.handleClick}
         >
           Play
         </button>
+        <button onClick={this.handlePass}>Pass</button>
       </div>
     );
   }

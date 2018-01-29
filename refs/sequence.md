@@ -6,7 +6,14 @@ current player
 last3turns
 handToBeat
 
+///////
+app_state = {
+  game: {},
+  match: {},
+  player: {}
+}
 
+//////
 
 tehn the player with the 3dice goes first
 
@@ -18,7 +25,7 @@ const _match = {
 
 this.tracker = {
       last3Turns: [],
-      currentPlayer: null,
+      currentPlayerName: null,
       roundType: null,
       cardsLeft: {}
     };
