@@ -1,5 +1,5 @@
 import Player from "./player";
-import Match from "./match1";
+import Match from "./match";
 
 class Game {
   constructor(user) {

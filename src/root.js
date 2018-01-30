@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Game from "./game/game";
-import Deck from "./game/deck";
-const myDeck = new Deck();
 
 const name = "Ayesha";
 const game = new Game(name);

@@ -1,4 +1,4 @@
-import Deck from "./deck1";
+import Deck from "./deck";
 import keyBy from "lodash/keyBy";
 import {
   nextPlayer,
@@ -11,7 +11,8 @@ import {
   isOver,
   initialBroadcast,
   getFirstPlayerName,
-  diffCards
+  diffCards,
+  createResult
 } from "./lib";
 
 class Match {
@@ -41,8 +42,17 @@ class Match {
       this.tracker.currentPlayerName = _match.currentPlayer.name;
       broadcast(_match, this.tracker);
       if (isOver(_match)) {
-        // update winner and populate result object
+        this.result = createResult(_match);
+        _match.players.forEach(p => {
+          if (this.result[p.name] > 0) this.winner = p.name;
+          p.points = p.points + this.result[p.name];
+        })
+        console.log(this.result);
+        console.log(output);
+        return output;
+
       } else {
+        console.log(this.tracker);
         return output;
       }
     };
@@ -60,7 +70,6 @@ class Match {
     if (turn.playerName === this.tracker.currentPlayerName) {
       remainingCards = this.updateMatch(turn);
     }
-    console.log(this.tracker);
     return remainingCards;
   };
 

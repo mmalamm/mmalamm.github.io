@@ -105,3 +105,14 @@ export const isValidTurn = (match, turn) => {
 
 export const isOver = match =>
   Boolean(match.players.filter(p => p.cards.length === 0).length);
+
+export const createResult = match => {
+  const winnerScore = match.players
+    .map(p => p.cards.length)
+    .reduce((a, b) => a + b);
+  const output = {};
+  match.players.forEach(
+    p => (output[p.name] = p.cards.length ? p.cards.length * -1 : winnerScore)
+  );
+  return output;
+};

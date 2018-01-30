@@ -1,31 +1,31 @@
-import Card from './card';
+import Card from "./card";
 const compRank = (a, b) => a.rank() - b.rank();
-const ordRank  = (a, b) => a.ord - b.ord;
+const ordRank = (a, b) => a.ord - b.ord;
 
 class Deck {
   constructor() {
     this.cards = [];
-    let cardSuits = ['Diamonds', 'Clovers', 'Hearts', 'Spades'];
-    let cardVals = [
-      'Three',
-      'Four',
-      'Five',
-      'Six',
-      'Seven',
-      'Eight',
-      'Nine',
-      'Ten',
-      'Jack',
-      'Queen',
-      'King',
-      'Ace',
-      'Two'
+    const cardSuits = ["Diamonds", "Clovers", "Hearts", "Spades"];
+    const cardVals = [
+      "Three",
+      "Four",
+      "Five",
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine",
+      "Ten",
+      "Jack",
+      "Queen",
+      "King",
+      "Ace",
+      "Two"
     ];
     let i = 0;
     let x = 8;
     cardVals.forEach(cardVal => {
       cardSuits.forEach(cardSuit => {
-        let card = new Card(cardSuit, cardVal, i, x%52);
+        let card = new Card(cardSuit, cardVal, i, x % 52);
         this.cards.push(card);
         i++;
         x++;
@@ -45,8 +45,11 @@ class Deck {
     return this;
   }
 
-  deal() {
-    return this.shuffle().cards.slice().splice(0,13).sort(ordRank);
+  deal(players) {
+    const hands = _.chunk(this.shuffle().cards.slice(), 13).map(h =>
+      h.sort(ordRank)
+    );
+    players.forEach((player, i) => (player.cards = hands[i]));
   }
 }
 

@@ -1,6 +1,6 @@
 import Card from './card';
 const compRank = (a, b) => a.rank() - b.rank();
-const ordRank = (a, b) => a.ord - b.ord;
+const ordRank  = (a, b) => a.ord - b.ord;
 
 class Deck {
   constructor() {
@@ -25,13 +25,13 @@ class Deck {
     let x = 8;
     cardVals.forEach(cardVal => {
       cardSuits.forEach(cardSuit => {
-        let card = new Card(cardSuit, cardVal, i, x % 52);
+        let card = new Card(cardSuit, cardVal, i, x%52);
         this.cards.push(card);
         i++;
         x++;
       });
     });
-    this.shuffle()
+    this.shuffle();
   }
 
   shuffle() {
@@ -45,10 +45,8 @@ class Deck {
     return this;
   }
 
-  deal(players) {
-    const hands = _.chunk(this.shuffle().cards.slice(), 13)
-      .map(h => h.sort(ordRank));
-    players.forEach((player, i) => player.cards = hands[i]);
+  deal() {
+    return this.shuffle().cards.slice().splice(0,13).sort(ordRank);
   }
 }
 
