@@ -12,20 +12,22 @@ const generateValidHands = dealtCards => {
 
 class PlayerPanel extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.player = props.player;
     this.state = {
-      cards: props.player.hand
+      cards: props.player.cards
     };
   }
 
   render() {
-    // console.log(this.props);
-    generateValidHands(this.state.cards);
     return (
       <div>
-        <HandPanel cards={this.state.cards} />
+        <HandPanel
+          cards={this.state.cards}
+          playTurn={this.player.playTurn}
+          p={this.player}
+          name={this.player.name}
+        />
       </div>
     );
   }

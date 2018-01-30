@@ -13,7 +13,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="container">
         {this.props.game.players.map((p, i) => (

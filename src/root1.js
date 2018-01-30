@@ -5,11 +5,11 @@ import Game from "./game/game";
 import Deck from "./game/deck";
 const myDeck = new Deck();
 
-const name = "player";
+const name = "Ayesha";
 const game = new Game(name);
-game.addPlayer("nafis");
-game.addPlayer("rishat");
-game.addPlayer("andrew");
+game.addPlayer("Laila");
+game.addPlayer("Hana");
+game.addPlayer("Zara");
 game.play();
 
 import App from "./gui/app1.js";

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "./cardComponent";
 import handChecker from "../game/handChecker";
 import TurnPanel from "./turnPanel";
+import { validateTurn, disablePass } from "./lib";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -9,9 +10,38 @@ class HandPanel extends Component {
     this.state = { hand: props.cards, userSelection: [], validSubmit: null };
   }
 
+  handleClick = e => {
+    e.preventDefault();
+    const turn = {
+      playerName: this.props.name,
+      name: this.state.validSubmit.name,
+      payload: this.state.validSubmit
+    };
+    const updatedHand = this.props.playTurn(turn);
+    this.setState({
+      hand: updatedHand,
+      userSelection: [],
+      validSubmit: null
+    });
+  };
+  handlePass = e => {
+    e.preventDefault();
+    if (disablePass(this.props.p.matchStatus, this.props.p))
+      return console.log("Cannot pass this round");
+    const pass = handChecker("PASS");
+    const turn = {
+      playerName: this.props.name,
+      name: "PASS",
+      payload: pass
+    };
+    this.props.playTurn(turn);
+    this.setState({
+      userSelection: [],
+      validSubmit: null
+    });
+  };
+
   toggleSelect = card => {
-    // const vs = this.state.validSubmit;
-    // this.props.validSubmit(vs);
     return e =>
       this.setState(prevState => {
         let newSelection =
@@ -23,9 +53,8 @@ class HandPanel extends Component {
           validSubmit: handChecker(newSelection)
         };
       });
-  }
+  };
   render() {
-    console.log(this.props);
     return (
       <div>
         <form>
@@ -44,6 +73,21 @@ class HandPanel extends Component {
           })}
         </form>
         <TurnPanel validHand={this.state.validSubmit} />
+        <div>{this.props.p.name}</div>
+        <button
+          // disabled={!Boolean(this.state.validSubmit)}
+          disabled={
+            !validateTurn(
+              this.props.p.matchStatus,
+              this.state.validSubmit,
+              this.props.p
+            )
+          }
+          onClick={this.handleClick}
+        >
+          Play
+        </button>
+        <button onClick={this.handlePass}>Pass</button>
       </div>
     );
   }
