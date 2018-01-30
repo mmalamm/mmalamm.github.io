@@ -30,7 +30,7 @@ export const matchUpdater = (match, turn) => {
 export const getRoundType = match => {
   const hand2beat = match.turns
     .slice(-3)
-    .filter(turn => turn.payload._type !== 'PASS')
+    .filter(turn => turn.payload._type !== "PASS")
     .pop();
   return hand2beat ? hand2beat.payload._type : null;
 };
@@ -77,6 +77,11 @@ export const trackerUpdater = match => {
 };
 
 export const isValidTurn = (match, turn) => {
+  if (
+    match.turns.length === 0 &&
+    !turn.payload.cards.find(c => c.suit === "Diamonds" && c.value === "Three")
+  )
+    return false;
   if (turn.payload._type === "PASS") return true;
   if (!handChecker(turn.payload.cards)) return false;
   const hand2beat = match.turns
