@@ -15,3 +15,11 @@ export const validateTurn = (tracker, hand, player) => {
     hand2beat.payload._strength < hand._strength;
   return output;
 };
+
+export const disablePass = (tracker, player) => {
+  const isNotMyTurn = tracker.currentPlayerName !== player.name;
+  const floorIsOpen = tracker.roundType === null;
+  if (isNotMyTurn) return true;
+  if (floorIsOpen) return true;
+  return false;
+};

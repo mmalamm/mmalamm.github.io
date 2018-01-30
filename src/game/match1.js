@@ -27,10 +27,11 @@ class Match {
     };
 
     this.tracker = {
-      last3Turns: [],
       currentPlayerName: null,
+      last3Turns: [],
       roundType: null,
-      cardsLeft: {}
+      cardsLeft: {},
+      hand2Beat: null
     };
 
     this.updateMatch = turn => {
@@ -55,11 +56,11 @@ class Match {
   }
 
   playTurn = turn => {
-    console.log(this.tracker);
     let remainingCards;
     if (turn.playerName === this.tracker.currentPlayerName) {
       remainingCards = this.updateMatch(turn);
     }
+    console.log(this.tracker);
     return remainingCards;
   };
 

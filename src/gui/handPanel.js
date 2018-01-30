@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "./cardComponent";
 import handChecker from "../game/handChecker";
 import TurnPanel from "./turnPanel";
-import { validateTurn } from "./lib";
+import { validateTurn, disablePass } from "./lib";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -26,6 +26,8 @@ class HandPanel extends Component {
   };
   handlePass = e => {
     e.preventDefault();
+    if (disablePass(this.props.p.matchStatus, this.props.p))
+      return console.log("Cannot pass this round");
     const pass = handChecker("PASS");
     const turn = {
       playerName: this.props.name,

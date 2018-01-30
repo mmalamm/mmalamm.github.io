@@ -28,11 +28,11 @@ export const matchUpdater = (match, turn) => {
 };
 
 export const getRoundType = match => {
-  const hand2beat = match.turns
+  const turn2Beat = match.turns
     .slice(-3)
     .filter(turn => turn.payload._type !== "PASS")
     .pop();
-  return hand2beat ? hand2beat.payload._type : null;
+  return turn2Beat ? turn2Beat.payload._type : null;
 };
 
 export const broadcast = (match, tracker) => {
@@ -68,11 +68,17 @@ export const createCardsLeft = match => {
 };
 
 export const trackerUpdater = match => {
+  let turn2Beat = match.turns
+    .slice(-3)
+    .filter(({ payload: p }) => !(p._type === "PASS"))
+    .pop();
+  turn2Beat = turn2Beat ? turn2Beat.name : null;
   return {
-    last3Turns: match.turns.slice(-3),
     currentPlayerName: match.currentPlayer.name,
+    last3Turns: match.turns.slice(-3),
     roundType: getRoundType(match),
-    cardsLeft: createCardsLeft(match)
+    cardsLeft: createCardsLeft(match),
+    turn2Beat
   };
 };
 
@@ -82,16 +88,18 @@ export const isValidTurn = (match, turn) => {
     !turn.payload.cards.find(c => c.suit === "Diamonds" && c.value === "Three")
   )
     return false;
-  if (turn.payload._type === "PASS") return true;
-  if (!handChecker(turn.payload.cards)) return false;
-  const hand2beat = match.turns
+
+  const turn2Beat = match.turns
     .slice(-3)
     .filter(({ payload: p }) => !(p._type === "PASS"))
     .pop();
-  if (!hand2beat) return true;
+  if (!turn2Beat && turn.payload._type === "PASS") return false;
+  if (!turn2Beat) return true;
+  if (turn.payload._type === "PASS") return true;
+  if (!handChecker(turn.payload.cards)) return false;
   const output =
-    hand2beat.payload._type == turn.payload._type &&
-    hand2beat.payload._strength < turn.payload._strength;
+    turn2Beat.payload._type == turn.payload._type &&
+    turn2Beat.payload._strength < turn.payload._strength;
   return output;
 };
 
