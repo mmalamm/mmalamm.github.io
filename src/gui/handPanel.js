@@ -29,6 +29,7 @@ class HandPanel extends Component {
     const pass = handChecker("PASS");
     const turn = {
       playerName: this.props.name,
+      name: "PASS",
       payload: pass
     };
     this.props.playTurn(turn);
@@ -70,6 +71,7 @@ class HandPanel extends Component {
           })}
         </form>
         <TurnPanel validHand={this.state.validSubmit} />
+        <div>{this.props.p.name}</div>
         <button
           // disabled={!Boolean(this.state.validSubmit)}
           disabled={

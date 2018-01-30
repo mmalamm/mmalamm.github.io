@@ -36,15 +36,12 @@ class Match {
     this.updateMatch = turn => {
       if (!isValidTurn(_match, turn)) return;
       const output = diffCards(_match.p[this.tracker.currentPlayerName].cards, turn.payload.cards);
-      console.log('what is this:',this);
       this.tracker = matchUpdater(_match, turn);
-      console.log('what is tracker:', this.tracker);
       this.tracker.currentPlayerName = _match.currentPlayer.name;
       broadcast(_match, this.tracker);
       if (isOver(_match)) {
         // update winner and populate result object
       } else {
-        console.log(output);
         return output;
       }
     };
@@ -58,7 +55,7 @@ class Match {
   }
 
   playTurn = turn => {
-    console.log(this);
+    console.log(this.tracker);
     let remainingCards;
     if (turn.playerName === this.tracker.currentPlayerName) {
       remainingCards = this.updateMatch(turn);
