@@ -20,8 +20,10 @@ class PlayerPanel extends Component {
   }
 
   render() {
+    const isMyTurn =
+      this.player.name === this.player.matchStatus.currentPlayerName;
     return (
-      <div>
+      <div style={{ backgroundColor: isMyTurn ? "#2E4053" : "black" }}>
         <HandPanel
           cards={this.state.cards}
           playTurn={this.player.playTurn}
