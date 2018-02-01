@@ -1,5 +1,6 @@
 import Player from "./player";
 import Match from "./match";
+import AiPlayer from "../ai/ai_player";
 
 class Game {
   constructor(user) {
@@ -12,6 +13,10 @@ class Game {
 
   addPlayer(user) {
     this.players.push(new Player(user));
+  }
+
+  addAiPlayer(user) {
+    this.players.push(new AiPlayer(user));
   }
 
   play() {

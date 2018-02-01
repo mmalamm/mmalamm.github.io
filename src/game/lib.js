@@ -56,9 +56,10 @@ export const initialBroadcast = (match, playTurn) => {
     cardsLeft: createCardsLeft(match)
   };
   match.players.forEach(p => {
-    p.update(tracker, p.cards);
     p.playTurn = playTurn;
+    p.update(tracker, p.cards);
   });
+  match.currentPlayer = match.p[tracker.currentPlayerName];
 };
 
 export const createCardsLeft = match => {

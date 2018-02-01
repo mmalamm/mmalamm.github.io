@@ -1,4 +1,4 @@
-import handChecker from './handChecker';
+import handChecker from '../game/handChecker';
 const combine = (a, min) => {
     const fn = (n, src, got, all) => {
         if (n == 0) {
@@ -21,5 +21,13 @@ const combine = (a, min) => {
         .filter( set => handChecker(set) )
         .map( set => handChecker(set) );
 }
+
+
+const generateValidHands = dealtCards => {
+  console.log("cards: ", dealtCards);
+  const currentValidHands = validHands(dealtCards);
+  console.log(currentValidHands);
+  return currentValidHands;
+};
 
 export default combine;
