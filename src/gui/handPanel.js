@@ -85,9 +85,9 @@ class HandPanel extends Component {
           }
           onClick={this.handleClick}
         >
-          Play
+          出牌
         </button>
-        <button onClick={this.handlePass}>Pass</button>
+        <button onClick={this.handlePass}>过</button>
       </div>
     );
   }
