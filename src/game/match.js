@@ -14,7 +14,7 @@ import {
   diffCards,
   createResult
 } from "./lib";
-
+let updater;
 class Match {
   constructor(arr) {
     this.winner = null;
@@ -36,6 +36,7 @@ class Match {
     };
 
     this.updateMatch = turn => {
+      debugger;
       if (!isValidTurn(_match, turn)) return;
       const output = diffCards(_match.p[this.tracker.currentPlayerName].cards, turn.payload.cards);
       this.tracker = matchUpdater(_match, turn);
@@ -56,7 +57,7 @@ class Match {
         return output;
       }
     };
-
+    updater = this.updateMatch;
     const deck = new Deck();
     deck.deal(_match.players);
     initialBroadcast(_match, this.playTurn);
@@ -67,6 +68,10 @@ class Match {
 
   playTurn = turn => {
     let remainingCards;
+    if (this.ai) {
+      remainingCards = updater(turn);
+      debugger;
+    }
     if (turn.playerName === this.tracker.currentPlayerName) {
       remainingCards = this.updateMatch(turn);
     }

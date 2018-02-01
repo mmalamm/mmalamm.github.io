@@ -5,8 +5,8 @@ import Game from "./game/game";
 
 const name = "Ayesha";
 const game = new Game(name);
-game.addPlayer("Laila");
-game.addPlayer("Hana");
+game.addAiPlayer("Laila");
+game.addAiPlayer("Hana");
 game.addAiPlayer("Zara");
 game.play();
 

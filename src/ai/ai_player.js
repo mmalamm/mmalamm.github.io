@@ -6,6 +6,7 @@ class AiPlayer {
     this.matchStatus = {};
     this.name = user;
     this.points = 100;
+    this.ai = true;
   }
 
   update = (trkr, cards) => {
@@ -23,14 +24,13 @@ class AiPlayer {
       );
 
       if (trkr.last3Turns.length === 0 && !firstTurn) return;
-
       if (firstTurn) {
-        const turn = {
+        debugger;
+        this.playTurn({
           playerName: this.name,
           name: firstTurn.name,
           payload: firstTurn
-        };
-        this.playTurn(firstTurn);
+        });
         return;
       }
 
@@ -51,7 +51,7 @@ class AiPlayer {
       }
       const pass = handChecker("PASS");
       const turn = { playerName: this.name, name: "PASS", payload: pass };
-      this.playTurn("PASS");
+      this.playTurn(turn);
     }
   };
 }
