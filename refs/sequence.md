@@ -1,6 +1,9 @@
 match sequence
 
-first match begins and players are dealt their cards
+match input 4 players, output 4 players with scores updated.
+
+1. match is instantiated:
+players are dealt their cards and
 
 current player
 last3turns
@@ -20,7 +23,8 @@ tehn the player with the 3dice goes first
 const _match = {
       players: arr,
       currentPlayer: null,
-      turns: []
+      turns: [],
+      p: { ...(pName: player) }
     };
 
 this.tracker = {

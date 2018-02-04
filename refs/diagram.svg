@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="463.87371"
-     inkscape:cy="444.29598"
+     inkscape:zoom="0.5"
+     inkscape:cx="105.85116"
+     inkscape:cy="594.32131"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1260"
      inkscape:window-height="787"
-     inkscape:window-x="134"
-     inkscape:window-y="71"
+     inkscape:window-x="202"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
@@ -42,7 +42,9 @@
      inkscape:snap-others="true"
      inkscape:snap-global="true"
      inkscape:snap-grids="true"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -60,176 +62,52 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:1.11405814"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.14765203"
        id="rect10"
        width="182.23016"
-       height="113.39914"
+       height="120.34126"
        x="12.60842"
-       y="14.810134" />
-    <g
-       id="g49"
-       transform="matrix(0.67072387,0,0,0.7476541,8.5077671,6.7661535)">
-      <rect
-         y="22.781466"
-         x="29.399654"
-         height="38.219543"
-         width="37.685001"
-         id="rect35"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332" />
-      <text
-         id="text39"
-         y="30.53228"
-         x="38.754082"
-         style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="30.53228"
-           x="38.754082"
-           id="tspan37"
-           sodipodi:role="line">player</tspan><tspan
-           id="tspan41"
-           style="stroke-width:0.26458332"
-           y="36.705891"
-           x="38.754082"
-           sodipodi:role="line" /></text>
-    </g>
-    <g
-       transform="matrix(0.67072387,0,0,0.7476541,134.904,6.7661535)"
-       id="g49-5">
-      <rect
-         y="22.781466"
-         x="29.399654"
-         height="38.219543"
-         width="37.685001"
-         id="rect35-5"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332" />
-      <text
-         id="text39-4"
-         y="30.53228"
-         x="38.754082"
-         style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="30.53228"
-           x="38.754082"
-           id="tspan37-1"
-           sodipodi:role="line">player</tspan><tspan
-           id="tspan41-8"
-           style="stroke-width:0.26458332"
-           y="36.705891"
-           x="38.754082"
-           sodipodi:role="line" /></text>
-    </g>
-    <g
-       transform="matrix(0.67072387,0,0,0.7476541,92.771913,6.7661535)"
-       id="g49-8">
-      <rect
-         y="22.781466"
-         x="29.399654"
-         height="38.219543"
-         width="37.685001"
-         id="rect35-3"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332" />
-      <text
-         id="text39-5"
-         y="30.53228"
-         x="38.754082"
-         style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="30.53228"
-           x="38.754082"
-           id="tspan37-2"
-           sodipodi:role="line">player</tspan><tspan
-           id="tspan41-2"
-           style="stroke-width:0.26458332"
-           y="36.705891"
-           x="38.754082"
-           sodipodi:role="line" /></text>
-    </g>
-    <g
-       transform="matrix(0.67072387,0,0,0.7476541,50.639843,6.7661535)"
-       id="g49-6">
-      <rect
-         y="22.781466"
-         x="29.399654"
-         height="38.219543"
-         width="37.685001"
-         id="rect35-6"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332" />
-      <text
-         id="text39-7"
-         y="30.53228"
-         x="38.754082"
-         style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="30.53228"
-           x="38.754082"
-           id="tspan37-8"
-           sodipodi:role="line">player</tspan><tspan
-           id="tspan41-4"
-           style="stroke-width:0.26458332"
-           y="36.705891"
-           x="38.754082"
-           sodipodi:role="line" /></text>
-    </g>
+       y="7.8680205" />
     <rect
-       style="fill:#ff8080;stroke:#000000;stroke-width:0.38454401"
+       style="fill:#ff8080;stroke:#000000;stroke-width:0.26434237"
        id="rect106"
-       width="186.60028"
-       height="82.278847"
-       x="11.021288"
-       y="202.94391" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="91.848213"
-       y="200.2381"
-       id="text110"><tspan
-         sodipodi:role="line"
-         id="tspan108"
-         x="91.848213"
-         y="204.744"
-         style="stroke-width:0.26458332" /><tspan
-         sodipodi:role="line"
-         x="91.848213"
-         y="210.9176"
-         style="stroke-width:0.26458332"
-         id="tspan112">_match</tspan></text>
+       width="63.675934"
+       height="113.93749"
+       x="17.782814"
+       y="150.10806" />
     <rect
-       style="fill:#87deaa;stroke:#000000;stroke-width:0.20528159"
+       style="fill:#87deaa;stroke:#000000;stroke-width:0.28466699"
        id="rect89"
-       width="57.522266"
-       height="29.191679"
-       x="20.817371"
-       y="71.66214" />
+       width="70.27182"
+       height="45.950275"
+       x="23.262489"
+       y="63.683746" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52159691px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18865699"
-       x="29.165472"
-       y="62.242214"
+       style="font-style:normal;font-weight:normal;font-size:4.88345003px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2616134"
+       x="37.42392"
+       y="51.038349"
        id="text93"
-       transform="scale(0.81516812,1.2267408)"><tspan
+       transform="scale(0.71813364,1.3924985)"><tspan
          sodipodi:role="line"
          id="tspan91"
-         x="29.165472"
-         y="65.45507"
-         style="stroke-width:0.18865699" /><tspan
+         x="37.42392"
+         y="55.493668"
+         style="stroke-width:0.2616134" /><tspan
          sodipodi:role="line"
-         x="29.165472"
-         y="69.857063"
-         style="stroke-width:0.18865699"
+         x="37.42392"
+         y="61.59798"
+         style="stroke-width:0.2616134"
          id="tspan95">last3Turns: turns[],</tspan><tspan
          sodipodi:role="line"
-         x="29.165472"
-         y="74.259064"
-         style="stroke-width:0.18865699"
+         x="37.42392"
+         y="67.702293"
+         style="stroke-width:0.2616134"
          id="tspan97">currentPlayerName: player.name,</tspan><tspan
          sodipodi:role="line"
-         x="29.165472"
-         y="78.661057"
-         style="stroke-width:0.18865699"
+         x="37.42392"
+         y="73.80661"
+         style="stroke-width:0.2616134"
          id="tspan99">cardsLeft: {...p:num}</tspan></text>
     <flowRoot
        xml:space="preserve"
@@ -241,7 +119,7 @@
            height="20.203051"
            x="114.14724"
            y="284.09308" /></flowRegion><flowPara
-         id="flowPara107"></flowPara></flowRoot>    <flowRoot
+         id="flowPara107" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot109"
        style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:18.66666667000000146px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -251,14 +129,14 @@
            height="21.213203"
            x="115.15739"
            y="282.07275" /></flowRegion><flowPara
-         id="flowPara115"></flowPara></flowRoot>    <text
+         id="flowPara115" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:bold;font-size:4.93888889px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;-inkscape-font-specification:'sans-serif, Bold';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        x="44.634007"
        y="77.037178"
        id="text119"><tspan
          sodipodi:role="line"
-         id="tspan121"></tspan></text>
+         id="tspan121" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:bold;font-size:4.93888889px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;-inkscape-font-specification:'sans-serif, Bold';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
@@ -266,55 +144,385 @@
        y="75.433563"
        id="text125"><tspan
          sodipodi:role="line"
-         id="tspan127"></tspan></text>
+         id="tspan127" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.84882975px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#aa0088;fill-opacity:1;stroke:none;stroke-width:0.36690158"
+       x="30.153112"
+       y="64.668602"
+       id="text131"
+       transform="scale(0.88096383,1.1351204)"><tspan
+         sodipodi:role="line"
+         id="tspan143"
+         x="30.153112"
+         y="64.668602"
+         style="stroke-width:0.36690158">matchStatus</tspan></text>
+    <rect
+       style="fill:#ff8080;stroke:#000000;stroke-width:0.26458333;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect159"
+       width="74.17289"
+       height="113.94817"
+       x="81.458748"
+       y="150.0974" />
+    <rect
+       style="fill:#ffe680;stroke:#000000;stroke-width:0.47389629"
+       id="rect161"
+       width="80.942627"
+       height="45.915638"
+       x="102.64417"
+       y="63.166519" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="22.076477"
+       y="224.11816"
+       id="text4685"><tspan
+         sodipodi:role="line"
+         id="tspan4683"
+         x="22.076477"
+         y="224.11816"
+         style="stroke-width:0.26458332">players: players[],</tspan><tspan
+         sodipodi:role="line"
+         x="22.076477"
+         y="230.29178"
+         style="stroke-width:0.26458332"
+         id="tspan4687">currentPlayerName,</tspan><tspan
+         sodipodi:role="line"
+         x="22.076477"
+         y="236.46539"
+         style="stroke-width:0.26458332"
+         id="tspan4689">turns: turns[],</tspan><tspan
+         sodipodi:role="line"
+         x="22.076477"
+         y="242.63899"
+         style="stroke-width:0.26458332"
+         id="tspan4691" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.3689518px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.50190812"
+       x="33.661484"
+       y="184.0677"
+       id="text4695"
+       transform="scale(0.87643916,1.1409805)"><tspan
+         sodipodi:role="line"
+         id="tspan4701"
+         x="33.661484"
+         y="184.0677"
+         style="stroke-width:0.50190812">_match</tspan></text>
+    <rect
+       style="fill:#87deaa;stroke:#000000;stroke-width:0.31878862;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       id="rect4703"
+       width="63.686596"
+       height="41.247108"
+       x="17.772154"
+       y="150.0974" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52159691px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18865699"
+       x="24.634508"
+       y="131.10271"
+       id="text93-1"
+       transform="scale(0.81516812,1.2267408)"><tspan
+         sodipodi:role="line"
+         id="tspan91-8"
+         x="24.634508"
+         y="134.31557"
+         style="stroke-width:0.18865699" /><tspan
+         sodipodi:role="line"
+         x="24.634508"
+         y="138.71756"
+         style="stroke-width:0.18865699"
+         id="tspan95-2">last3Turns: turns[],</tspan><tspan
+         sodipodi:role="line"
+         x="24.634508"
+         y="143.11955"
+         style="stroke-width:0.18865699"
+         id="tspan97-6">currentPlayerName: player.name,</tspan><tspan
+         sodipodi:role="line"
+         x="24.634508"
+         y="147.52156"
+         style="stroke-width:0.18865699"
+         id="tspan99-0">cardsLeft: {...p:num}</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93888903px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#aa0088;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="23.51972"
-       y="77.838982"
-       id="text131"><tspan
+       x="19.826223"
+       y="162.31299"
+       id="text131-3"><tspan
+         style="stroke-width:0.26458332"
          sodipodi:role="line"
-         id="tspan143"
-         x="23.51972"
-         y="77.838982">matchStatus</tspan></text>
+         id="tspan143-9"
+         x="19.826223"
+         y="162.31299">matchStatus</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot946"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:18.66666667000000146px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion948"><rect
+           id="rect950"
+           width="21.213203"
+           height="84.852814"
+           x="474.7717"
+           y="681.08301" /></flowRegion><flowPara
+         id="flowPara952" /></flowRoot>    <g
+       transform="matrix(0.89877437,0,0,0.85315957,16.777923,13.953471)"
+       id="g1002-8-5">
+      <rect
+         y="167.68221"
+         x="81.458748"
+         height="17.54797"
+         width="63.218189"
+         id="rect922-3-6-2"
+         style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.1050602;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.16436938;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1296"
+         width="63.290638"
+         height="5.6548285"
+         x="81.422523"
+         y="185.19386" />
+      <flowRoot
+         transform="matrix(0.26151833,0,0,0.22665214,-39.724726,36.058462)"
+         style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot930-9-5-1"
+         xml:space="preserve"><flowRegion
+           id="flowRegion932-0-7-1"><rect
+             y="587.76215"
+             x="475.68283"
+             height="99.381783"
+             width="217.12492"
+             id="rect934-5-6-0" /></flowRegion><flowPara
+           id="flowPara936-2-2-1">Player</flowPara><flowPara
+           id="flowPara938-2-70-8">name: string,</flowPara><flowPara
+           id="flowPara942-3-9-60">points: num,</flowPara><flowPara
+           id="flowPara1290">cards: cards[],</flowPara><flowPara
+           id="flowPara944-7-99-0" /></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 127.06522,118.40276 v 38.61039"
+       id="path1186-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.16269709px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.02463,109.09678 -3.12515,9.30598 h 6.33148 z"
+       id="path1188-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 60.428709,117.49253 V 150.0974"
+       id="path1186-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.14974983px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 60.387998,109.63402 -3.135215,7.85851 h 6.351851 z"
+       id="path1188-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 159.34317,220.83958 h 15.39914"
+       id="path1186"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.10291374px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 155.63163,220.88029 3.71154,3.13521 v -6.35185 z"
+       id="path1188"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 174.74231,220.83957 V 128.20928"
+       id="path1254"
+       inkscape:connector-curvature="0" />
     <rect
-       style="fill:#ffe680;stroke:#000000;stroke-width:0.62632698"
-       id="rect159"
-       width="166.32195"
-       height="37.8578"
-       x="19.825848"
-       y="144.74554" />
+       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1262"
+       width="52.010651"
+       height="9.541522"
+       x="101.58915"
+       y="133.11032" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="105.14383"
+       y="138.72299"
+       id="text1260"><tspan
+         sodipodi:role="line"
+         id="tspan1258"
+         x="105.14383"
+         y="138.72299"
+         style="stroke-width:0.26458332">priveleged access</tspan></text>
     <rect
-       style="fill:#ffe680;stroke:#000000;stroke-width:0.41917482"
-       id="rect161"
-       width="71.108376"
-       height="40.892239"
-       x="102.34954"
-       y="75.700829" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 41.694047,71.662138 V 52.373807"
-       id="path177"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 41.694047,62.604623 H 166.24164"
-       id="path4675"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 81.517206,62.604623 V 52.373807"
-       id="path4677"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 125.11012,62.604623 V 52.373807"
-       id="path4679"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 166.24164,62.604623 V 52.373807"
-       id="path4681"
-       inkscape:connector-curvature="0" />
+       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.46035936;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1268"
+       width="42.666721"
+       height="8.7866077"
+       x="39.095345"
+       y="133.79497" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="45.243752"
+       y="139.04373"
+       id="text1266"><tspan
+         sodipodi:role="line"
+         id="tspan1264"
+         x="45.243752"
+         y="139.04373"
+         style="stroke-width:0.26458332">open access</tspan></text>
+    <rect
+       style="fill:#ff9955;fill-opacity:1;stroke:#000000;stroke-width:0.41003549;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1282"
+       width="40.18224"
+       height="24.814835"
+       x="163.46536"
+       y="161.48825"
+       ry="7.4083333" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.48243475px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.24013044"
+       x="164.14445"
+       y="172.78387"
+       id="text1272"
+       transform="scale(1.0190496,0.98130651)"><tspan
+         sodipodi:role="line"
+         x="164.14445"
+         y="172.78387"
+         style="stroke-width:0.24013044"
+         id="tspan1278">Turn</tspan><tspan
+         sodipodi:role="line"
+         x="164.14445"
+         y="178.38692"
+         style="stroke-width:0.24013044"
+         id="tspan1274">playerName,</tspan><tspan
+         sodipodi:role="line"
+         x="164.14445"
+         y="183.98996"
+         style="stroke-width:0.24013044"
+         id="tspan1276">payload: hand</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="110.38231"
+       y="70.996887"
+       id="text1286"><tspan
+         sodipodi:role="line"
+         id="tspan1284"
+         x="110.38231"
+         y="70.996887"
+         style="stroke-width:0.26458332;-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:4.93888889px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal">Cards</tspan></text>
+    <rect
+       y="181.5359"
+       x="89.859306"
+       height="14.971218"
+       width="56.818886"
+       id="rect922-3-6-2-4"
+       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.09199806;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.14393333;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1296-8"
+       width="56.884003"
+       height="4.824471"
+       x="89.826752"
+       y="196.47614" />
+    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-19.057297,69.239857)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-8"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-4"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-5" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-7">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-9">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-8">points: num,</flowPara><flowPara
+         id="flowPara1290-4">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-5" /></flowRoot>    <rect
+       y="206.40674"
+       x="90.123878"
+       height="14.971218"
+       width="56.818886"
+       id="rect922-3-6-2-8"
+       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.09199806;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.14393333;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1296-89"
+       width="56.884003"
+       height="4.824471"
+       x="90.091331"
+       y="221.34697" />
+    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-18.792713,94.110688)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-4"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-7"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-0" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-4">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-0">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-6">points: num,</flowPara><flowPara
+         id="flowPara1290-5">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-3" /></flowRoot>    <rect
+       y="233.92342"
+       x="90.388474"
+       height="14.971218"
+       width="56.818886"
+       id="rect922-3-6-2-85"
+       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.09199806;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.14393333;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1296-1"
+       width="56.884003"
+       height="4.824471"
+       x="90.355919"
+       y="248.86366" />
+    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-18.52813,121.62735)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-2"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-46"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-7" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-5">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-5">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-0">points: num,</flowPara><flowPara
+         id="flowPara1290-52">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-0" /></flowRoot>    <rect
+       style="fill:#cd87de;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1060"
+       width="34.660416"
+       height="27.252083"
+       x="164.83542"
+       y="197.51668" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888855px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="169.06876"
+       y="205.98332"
+       id="text1054"><tspan
+         sodipodi:role="line"
+         id="tspan1052"
+         x="169.06876"
+         y="205.98332"
+         style="stroke-width:0.26458332">validations</tspan><tspan
+         sodipodi:role="line"
+         x="169.06876"
+         y="212.15694"
+         style="stroke-width:0.26458332"
+         id="tspan1056">process</tspan><tspan
+         sodipodi:role="line"
+         x="169.06876"
+         y="218.33055"
+         style="stroke-width:0.26458332"
+         id="tspan1058">update</tspan></text>
   </g>
 </svg>
