@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="438.7653"
-     inkscape:cy="419.12487"
+     inkscape:cx="261.62244"
+     inkscape:cy="762.6963"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1260"
      inkscape:window-height="787"
-     inkscape:window-x="1853"
-     inkscape:window-y="140"
+     inkscape:window-x="77"
+     inkscape:window-y="62"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -61,7 +61,7 @@
        y="14.912954" />
     <g
        id="g49"
-       transform="matrix(0.67072387,0,0,0.7476541,8.5077662,5.9868379)">
+       transform="matrix(0.67072387,0,0,0.7476541,8.5077671,6.7661535)">
       <rect
          y="22.781466"
          x="29.399654"
@@ -87,7 +87,7 @@
            sodipodi:role="line" /></text>
     </g>
     <g
-       transform="matrix(0.67072387,0,0,0.7476541,134.90399,7.8468802)"
+       transform="matrix(0.67072387,0,0,0.7476541,134.904,6.7661535)"
        id="g49-5">
       <rect
          y="22.781466"
@@ -114,7 +114,7 @@
            sodipodi:role="line" /></text>
     </g>
     <g
-       transform="matrix(0.67072387,0,0,0.7476541,92.755163,7.101951)"
+       transform="matrix(0.67072387,0,0,0.7476541,92.771913,6.7661535)"
        id="g49-8">
       <rect
          y="22.781466"
@@ -141,7 +141,7 @@
            sodipodi:role="line" /></text>
     </g>
     <g
-       transform="matrix(0.67072387,0,0,0.7476541,50.993758,5.6854268)"
+       transform="matrix(0.67072387,0,0,0.7476541,50.639843,6.7661535)"
        id="g49-6">
       <rect
          y="22.781466"
@@ -184,7 +184,7 @@
          id="tspan108"
          x="91.848213"
          y="204.744"
-         style="stroke-width:0.26458332"></tspan><tspan
+         style="stroke-width:0.26458332" /><tspan
          sodipodi:role="line"
          x="91.848213"
          y="210.9176"
