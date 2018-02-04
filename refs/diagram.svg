@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="105.85116"
-     inkscape:cy="594.32131"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="356.67765"
+     inkscape:cy="349.43057"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,6 +61,60 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ff8080;stroke:#000000;stroke-width:0.26458333;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect159"
+       width="74.17289"
+       height="113.94817"
+       x="81.458748"
+       y="150.0974" />
+    <rect
+       y="206.40674"
+       x="90.123878"
+       height="14.971218"
+       width="56.818886"
+       id="rect922-3-6-2-8"
+       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.09199806;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.14393333;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1296-89"
+       width="56.884003"
+       height="4.824471"
+       x="90.091331"
+       y="221.34697" />
+    <g
+       transform="matrix(0.89877437,0,0,0.85315957,16.777923,13.953471)"
+       id="g1002-8-5">
+      <rect
+         y="167.68221"
+         x="81.458748"
+         height="17.54797"
+         width="63.218189"
+         id="rect922-3-6-2"
+         style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.1050602;stroke-miterlimit:4;stroke-dasharray:none" />
+      <rect
+         style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.16436938;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1296"
+         width="63.290638"
+         height="5.6548285"
+         x="81.422523"
+         y="185.19386" />
+      <flowRoot
+         transform="matrix(0.26151833,0,0,0.22665214,-39.724726,36.058462)"
+         style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot930-9-5-1"
+         xml:space="preserve"><flowRegion
+           id="flowRegion932-0-7-1"><rect
+             y="587.76215"
+             x="475.68283"
+             height="99.381783"
+             width="217.12492"
+             id="rect934-5-6-0" /></flowRegion><flowPara
+           id="flowPara936-2-2-1">Player</flowPara><flowPara
+           id="flowPara938-2-70-8">name: string,</flowPara><flowPara
+           id="flowPara942-3-9-60">points: num,</flowPara><flowPara
+           id="flowPara1290">cards: cards[],</flowPara><flowPara
+           id="flowPara944-7-99-0" /></flowRoot>    </g>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:1.14765203"
        id="rect10"
@@ -157,13 +211,6 @@
          x="30.153112"
          y="64.668602"
          style="stroke-width:0.36690158">matchStatus</tspan></text>
-    <rect
-       style="fill:#ff8080;stroke:#000000;stroke-width:0.26458333;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect159"
-       width="74.17289"
-       height="113.94817"
-       x="81.458748"
-       y="150.0974" />
     <rect
        style="fill:#ffe680;stroke:#000000;stroke-width:0.47389629"
        id="rect161"
@@ -264,40 +311,7 @@
            height="84.852814"
            x="474.7717"
            y="681.08301" /></flowRegion><flowPara
-         id="flowPara952" /></flowRoot>    <g
-       transform="matrix(0.89877437,0,0,0.85315957,16.777923,13.953471)"
-       id="g1002-8-5">
-      <rect
-         y="167.68221"
-         x="81.458748"
-         height="17.54797"
-         width="63.218189"
-         id="rect922-3-6-2"
-         style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.1050602;stroke-miterlimit:4;stroke-dasharray:none" />
-      <rect
-         style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.16436938;stroke-miterlimit:4;stroke-dasharray:none"
-         id="rect1296"
-         width="63.290638"
-         height="5.6548285"
-         x="81.422523"
-         y="185.19386" />
-      <flowRoot
-         transform="matrix(0.26151833,0,0,0.22665214,-39.724726,36.058462)"
-         style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         id="flowRoot930-9-5-1"
-         xml:space="preserve"><flowRegion
-           id="flowRegion932-0-7-1"><rect
-             y="587.76215"
-             x="475.68283"
-             height="99.381783"
-             width="217.12492"
-             id="rect934-5-6-0" /></flowRegion><flowPara
-           id="flowPara936-2-2-1">Player</flowPara><flowPara
-           id="flowPara938-2-70-8">name: string,</flowPara><flowPara
-           id="flowPara942-3-9-60">points: num,</flowPara><flowPara
-           id="flowPara1290">cards: cards[],</flowPara><flowPara
-           id="flowPara944-7-99-0" /></flowRoot>    </g>
-    <path
+         id="flowPara952" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 127.06522,118.40276 v 38.61039"
        id="path1186-7"
@@ -423,51 +437,7 @@
        height="4.824471"
        x="89.826752"
        y="196.47614" />
-    <flowRoot
-       transform="matrix(0.23504597,0,0,0.19337044,-19.057297,69.239857)"
-       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       id="flowRoot930-9-5-1-8"
-       xml:space="preserve"><flowRegion
-         id="flowRegion932-0-7-1-4"><rect
-           y="587.76215"
-           x="475.68283"
-           height="99.381783"
-           width="217.12492"
-           id="rect934-5-6-0-5" /></flowRegion><flowPara
-         id="flowPara936-2-2-1-7">Player</flowPara><flowPara
-         id="flowPara938-2-70-8-9">name: string,</flowPara><flowPara
-         id="flowPara942-3-9-60-8">points: num,</flowPara><flowPara
-         id="flowPara1290-4">cards: cards[],</flowPara><flowPara
-         id="flowPara944-7-99-0-5" /></flowRoot>    <rect
-       y="206.40674"
-       x="90.123878"
-       height="14.971218"
-       width="56.818886"
-       id="rect922-3-6-2-8"
-       style="fill:#87deaa;fill-opacity:1;stroke:#000000;stroke-width:0.09199806;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
-       style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.14393333;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1296-89"
-       width="56.884003"
-       height="4.824471"
-       x="90.091331"
-       y="221.34697" />
-    <flowRoot
-       transform="matrix(0.23504597,0,0,0.19337044,-18.792713,94.110688)"
-       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       id="flowRoot930-9-5-1-4"
-       xml:space="preserve"><flowRegion
-         id="flowRegion932-0-7-1-7"><rect
-           y="587.76215"
-           x="475.68283"
-           height="99.381783"
-           width="217.12492"
-           id="rect934-5-6-0-0" /></flowRegion><flowPara
-         id="flowPara936-2-2-1-4">Player</flowPara><flowPara
-         id="flowPara938-2-70-8-0">name: string,</flowPara><flowPara
-         id="flowPara942-3-9-60-6">points: num,</flowPara><flowPara
-         id="flowPara1290-5">cards: cards[],</flowPara><flowPara
-         id="flowPara944-7-99-0-3" /></flowRoot>    <rect
        y="233.92342"
        x="90.388474"
        height="14.971218"
@@ -481,22 +451,7 @@
        height="4.824471"
        x="90.355919"
        y="248.86366" />
-    <flowRoot
-       transform="matrix(0.23504597,0,0,0.19337044,-18.52813,121.62735)"
-       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       id="flowRoot930-9-5-1-2"
-       xml:space="preserve"><flowRegion
-         id="flowRegion932-0-7-1-46"><rect
-           y="587.76215"
-           x="475.68283"
-           height="99.381783"
-           width="217.12492"
-           id="rect934-5-6-0-7" /></flowRegion><flowPara
-         id="flowPara936-2-2-1-5">Player</flowPara><flowPara
-         id="flowPara938-2-70-8-5">name: string,</flowPara><flowPara
-         id="flowPara942-3-9-60-0">points: num,</flowPara><flowPara
-         id="flowPara1290-52">cards: cards[],</flowPara><flowPara
-         id="flowPara944-7-99-0-0" /></flowRoot>    <rect
+    <rect
        style="fill:#cd87de;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1060"
        width="34.660416"
@@ -524,5 +479,50 @@
          y="218.33055"
          style="stroke-width:0.26458332"
          id="tspan1058">update</tspan></text>
-  </g>
+    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-19.057297,69.239857)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-8"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-4"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-5" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-7">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-9">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-8">points: num,</flowPara><flowPara
+         id="flowPara1290-4">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-5" /></flowRoot>    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-18.792713,94.110688)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-4"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-7"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-0" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-4">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-0">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-6">points: num,</flowPara><flowPara
+         id="flowPara1290-5">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-3" /></flowRoot>    <flowRoot
+       transform="matrix(0.23504597,0,0,0.19337044,-18.52813,121.62735)"
+       style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot930-9-5-1-2"
+       xml:space="preserve"><flowRegion
+         id="flowRegion932-0-7-1-46"><rect
+           y="587.76215"
+           x="475.68283"
+           height="99.381783"
+           width="217.12492"
+           id="rect934-5-6-0-7" /></flowRegion><flowPara
+         id="flowPara936-2-2-1-5">Player</flowPara><flowPara
+         id="flowPara938-2-70-8-5">name: string,</flowPara><flowPara
+         id="flowPara942-3-9-60-0">points: num,</flowPara><flowPara
+         id="flowPara1290-52">cards: cards[],</flowPara><flowPara
+         id="flowPara944-7-99-0-0" /></flowRoot>  </g>
 </svg>
