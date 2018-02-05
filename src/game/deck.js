@@ -50,6 +50,7 @@ class Deck {
       h.sort(ordRank)
     );
     players.forEach((player, i) => (player.cards = hands[i]));
+    return players;
   }
 }
 
