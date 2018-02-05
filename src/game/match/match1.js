@@ -15,7 +15,7 @@ const o = ["UPDATE_PLAYERS", "SET_CURRENT_PLAYER_NAME", "ADD_TURN"].reduce(
 const { UPDATE_PLAYERS, SET_CURRENT_PLAYER_NAME, ADD_TURN } = o;
 
 // action creators
-const addPlayers = players => ({
+const updatePlayers = players => ({
   type: UPDATE_PLAYERS,
   players
 });
@@ -60,7 +60,6 @@ const addTurn = turn => ({
 // };
 
 const getFirstPlayerName = players => {
-  debugger;
   return players.find(p =>
     p.cards.filter(c => c.suit === "Diamonds" && c.value === "Three")
   ).name;
@@ -89,8 +88,12 @@ const createMatch = players => {
 
 class Match {
   constructor(players) {
-    this.match = createMatch(players);
-    console.log(this.match.getState());
+    const match = createMatch(players);
+    this.updatePlayers = players => match.dispatch(updatePlayers(players));
+    this.setCurrentPlayerName = name => match.dispatch(setCurrentPlayerName(name));
+    this.addTurn = turn => match.dispatch(addTurn(turn));
+    console.log('MARTCH::::>',match);
+    console.log(this);
   }
 }
 
