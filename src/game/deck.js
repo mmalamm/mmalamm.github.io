@@ -49,8 +49,11 @@ class Deck {
     const hands = _.chunk(this.shuffle().cards.slice(), 13).map(h =>
       h.sort(ordRank)
     );
-    players.forEach((player, i) => (player.cards = hands[i]));
-    return players;
+    // players.forEach((player, i) => (player.cards = hands[i]));
+    return players.map(({name}, i) => ({
+      name,
+      cards: hands[i]
+    }));
   }
 }
 

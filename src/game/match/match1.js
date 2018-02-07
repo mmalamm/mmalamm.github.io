@@ -111,7 +111,7 @@ class Match {
       p.matchStatus$ = this.matchStatus$;
       p.myCards$ = Rx.Observable.from(match).map(
         d => d.players.find(player => player.name === p.name).cards
-      ).subscribe(x => console.log(x));
+      );
     });
   }
 

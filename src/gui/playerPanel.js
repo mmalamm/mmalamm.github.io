@@ -17,10 +17,11 @@ class PlayerPanel extends Component {
     super(props);
     this.player = props.player;
     this.state = {
-      cards: props.player.cards
+      cards: []
     };
-
-    console.log(generateValidHands(props.player.cards))
+    // console.log(props);
+    this.player.myCards$.subscribe(c => console.log(c))
+    // console.log(generateValidHands(props.player.cards))
   }
 
   render() {
