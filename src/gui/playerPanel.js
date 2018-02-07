@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TurnPanel from "./turnPanel";
 import HandPanel from "./handPanel";
 
-import validHands from '../ai/vh1';
+import validHands from "../ai/vh1";
 
 const generateValidHands = dealtCards => {
   // console.log("cards: ", dealtCards);
@@ -11,7 +11,6 @@ const generateValidHands = dealtCards => {
   return currentValidHands;
 };
 
-
 class PlayerPanel extends Component {
   constructor(props) {
     super(props);
@@ -19,9 +18,10 @@ class PlayerPanel extends Component {
     this.state = {
       cards: []
     };
-    // console.log(props);
-    this.player.myCards$.subscribe(c => console.log(c))
-    // console.log(generateValidHands(props.player.cards))
+  }
+
+  componentWillMount() {
+    this.player.myCards$.subscribe(cards => this.setState({ cards }));
   }
 
   render() {

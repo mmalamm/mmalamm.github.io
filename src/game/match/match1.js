@@ -100,14 +100,19 @@ class Match {
       match.dispatch(setCurrentPlayerName(name));
     this.addTurn = turn => match.dispatch(addTurn(turn));
 
+    const subject = new Rx.BehaviorSubject(match.getState());
     this.matchStatus$ = Rx.Observable.from(match).map(
       ({ players, currentPlayerName, turns }) => ({
         players: players.map(({ name, points }) => ({ name, points })),
         currentPlayerName,
         last3Turns: turns.slice(-3)
       })
-    );
+    )
+    this.matchStatus$.subscribe(d => subject.next(d));
+    this.getMatchStatus$ = subject;
+
     players.forEach(p => {
+      p.playTurn = this.playTurn;
       p.matchStatus$ = this.matchStatus$;
       p.myCards$ = Rx.Observable.from(match).map(
         d => d.players.find(player => player.name === p.name).cards
@@ -115,7 +120,11 @@ class Match {
     });
   }
 
-  playTurn = turn => {};
+  playTurn = turn => {
+    // console.log(this.getMatchStatus$);
+    console.log(this.getMatchStatus$.getValue());
+    return [];
+  };
 }
 
 export default Match;

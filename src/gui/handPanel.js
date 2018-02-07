@@ -59,7 +59,7 @@ class HandPanel extends Component {
       <div>
         <form>
           {this.state.hand.map(card => {
-            let uniqKey = Date.now().toString() + card.rank();
+            let uniqKey = Date.now().toString() + card._rank;
             let selectionState = this.state.userSelection.find(c => c === card);
             return (
               <div key={uniqKey} onClick={this.toggleSelect(card)}>
@@ -75,14 +75,14 @@ class HandPanel extends Component {
         <TurnPanel validHand={this.state.validSubmit} />
         <div>{this.props.p.name}</div>
         <button
-          // disabled={!Boolean(this.state.validSubmit)}
-          disabled={
-            !validateTurn(
-              this.props.p.matchStatus,
-              this.state.validSubmit,
-              this.props.p
-            )
-          }
+          disabled={!Boolean(this.state.validSubmit)}
+          // disabled={
+          //   !validateTurn(
+          //     this.props.p.matchStatus,
+          //     this.state.validSubmit,
+          //     this.props.p
+          //   )
+          // }
           onClick={this.handleClick}
         >
           出牌
