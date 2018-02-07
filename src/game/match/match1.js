@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import Rx from "rxjs/Rx";
 
 import Deck from "../deck";
 // input: array of Player objects each with name and points
@@ -69,7 +70,11 @@ const createMatch = players => {
   const deck = new Deck();
   const dealtPlayers = deck.deal(players);
   const firstPlayerName = getFirstPlayerName(dealtPlayers);
-  const MATCH_INIT_STATE = { players: dealtPlayers, currentPlayerName: firstPlayerName, turns: [] };
+  const MATCH_INIT_STATE = {
+    players: dealtPlayers,
+    currentPlayerName: firstPlayerName,
+    turns: []
+  };
   const matchReducer = (state = MATCH_INIT_STATE, action) => {
     switch (action.type) {
       case UPDATE_PLAYERS:
@@ -89,12 +94,28 @@ const createMatch = players => {
 class Match {
   constructor(players) {
     const match = createMatch(players);
+    window.match = match;
     this.updatePlayers = players => match.dispatch(updatePlayers(players));
-    this.setCurrentPlayerName = name => match.dispatch(setCurrentPlayerName(name));
+    this.setCurrentPlayerName = name =>
+      match.dispatch(setCurrentPlayerName(name));
     this.addTurn = turn => match.dispatch(addTurn(turn));
-    console.log('MARTCH::::>',match);
-    console.log(this);
+
+    this.matchStatus$ = Rx.Observable.from(match).map(
+      ({ players, currentPlayerName, turns }) => ({
+        players: players.map(({ name, points }) => ({ name, points })),
+        currentPlayerName,
+        last3Turns: turns.slice(-3)
+      })
+    );
+    players.forEach(p => {
+      p.matchStatus$ = this.matchStatus$;
+      p.myCards$ = Rx.Observable.from(match).map(
+        d => d.players.find(player => player.name === p.name).cards
+      ).subscribe(x => console.log(x));
+    });
   }
+
+  playTurn = turn => {};
 }
 
 export default Match;
