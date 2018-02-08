@@ -10,27 +10,33 @@ class HandPanel extends Component {
     this.state = { hand: props.cards, userSelection: [], validSubmit: null };
   }
 
+  componentWillMount() {
+    this.props.p.getMatchStatus$.subscribe(d => {
+      console.log(this.props.p.name, d);
+    });
+    this.props.p.myCards$.subscribe(d => {
+      this.setState({ hand: d, userSelection: [], validSubmit: null });
+    });
+  }
+
   handleClick = e => {
+
     e.preventDefault();
     const turn = {
-      playerName: this.props.name,
+      playerName: this.props.p.name,
       name: this.state.validSubmit.name,
       payload: this.state.validSubmit
     };
-    const updatedHand = this.props.playTurn(turn);
-    this.setState({
-      hand: updatedHand,
-      userSelection: [],
-      validSubmit: null
-    });
+    this.props.p.playTurn(turn);
   };
   handlePass = e => {
     e.preventDefault();
-    if (disablePass(this.props.p.matchStatus, this.props.p))
+    const tracker = this.props.p.getMatchStatus$.getValue();
+    if (disablePass(tracker, this.props.p))
       return console.log("Cannot pass this round");
     const pass = handChecker("PASS");
     const turn = {
-      playerName: this.props.name,
+      playerName: this.props.p.name,
       name: "PASS",
       payload: pass
     };
@@ -55,6 +61,7 @@ class HandPanel extends Component {
       });
   };
   render() {
+    const tracker = this.props.p.getMatchStatus$.getValue();
     return (
       <div>
         <form>
@@ -76,13 +83,13 @@ class HandPanel extends Component {
         <div>{this.props.p.name}</div>
         <button
           disabled={!Boolean(this.state.validSubmit)}
-          // disabled={
-          //   !validateTurn(
-          //     this.props.p.matchStatus,
-          //     this.state.validSubmit,
-          //     this.props.p
-          //   )
-          // }
+          disabled={
+            !validateTurn(
+              tracker,
+              this.state.validSubmit,
+              this.props.p
+            )
+          }
           onClick={this.handleClick}
         >
           出牌

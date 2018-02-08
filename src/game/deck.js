@@ -50,9 +50,10 @@ class Deck {
       h.sort(ordRank)
     );
     // players.forEach((player, i) => (player.cards = hands[i]));
-    return players.map(({name}, i) => ({
+    return players.map(({ name, points }, i) => ({
       name,
-      cards: hands[i]
+      cards: hands[i],
+      points
     }));
   }
 }
