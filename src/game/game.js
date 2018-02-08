@@ -21,6 +21,11 @@ class Game {
 
   play() {
     const match = new Match(this.players);
+    match.getMatchStatus$.subscribe(
+      d => console.log("match updated"),
+      e => console.log("match error"),
+      d => console.log("match completed")
+    );
     this.currentMatch = match;
   }
 }
