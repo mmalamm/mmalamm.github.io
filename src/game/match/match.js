@@ -1,9 +1,9 @@
 import { createStore } from "redux";
 import Rx from "rxjs/Rx";
 
-import { isValidTurn, createTracker } from "./lib1";
-import { processTurn } from './createMatch';
-import createMatch from './createMatch'
+import { isValidTurn, createTracker } from "./lib";
+import { processTurn } from "./createMatch";
+import createMatch from "./createMatch";
 // input: array of Player objects each with name and points
 // output: array of Player objects with updated points
 
@@ -13,9 +13,9 @@ class Match {
     // window.match = match;
     this.processTurn = turn => match.dispatch(processTurn(turn));
     const subject = new Rx.BehaviorSubject(match.getState());
-    this.matchStatus$ = Rx.Observable.from(match).map(
-      match => createTracker(match)
-    );
+    this.matchStatus$ = Rx.Observable.from(match)
+      .map(match => createTracker(match))
+      .takeUntil(d => d.players.some(p => p.cards.length === 0));
     this.matchStatus$.subscribe(d => subject.next(d));
     this.getMatchStatus$ = subject;
 

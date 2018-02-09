@@ -1,5 +1,5 @@
 import Player from "./player";
-import Match from "./match/match1";
+import Match from "./match/match";
 import AiPlayer from "../ai/ai_player";
 
 class Game {
