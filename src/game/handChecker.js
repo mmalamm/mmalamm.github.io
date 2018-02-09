@@ -1,10 +1,10 @@
-const compRank = (a, b) => a.rank() - b.rank();
+const compRank = (a, b) => a._rank - b._rank;
 const maxRank = cards =>
   cards
     .slice()
     .sort(compRank)
     .pop()
-    .rank();
+    ._rank;
 import uniq from "lodash/uniq";
 import isEqual from "lodash/isEqual";
 const _ = {
@@ -32,7 +32,7 @@ const handChecker = userInput => {
   let str, name;
   switch (arr.length) {
     case 1:
-      str = arr[0].rank();
+      str = arr[0]._rank;
       name = `${arr[0].value} of ${arr[0].suit}`;
       return new Hand("Single", arr, 100 + str, name);
     case 2:
@@ -91,8 +91,8 @@ const handChecker = userInput => {
           };
         }
         if (isStraight) {
-          let mainCard = arr.filter(c => c.rank() === maxRank(arr))[0];
-          let str = mainCard.rank();
+          let mainCard = arr.filter(c => c._rank === maxRank(arr))[0];
+          let str = mainCard._rank;
           return {
             strength: str + 400,
             name: `Straight to ${mainCard.value} of ${mainCard.suit}`

@@ -20,7 +20,7 @@ class TurnPanel extends Component {
         <p>{this.state.validSubmit.name}</p>
         <form>
           {this.state.validSubmit.cards.map(card => {
-            let uniqKey = Date.now().toString() + card.rank();
+            let uniqKey = Date.now().toString() + card._rank;
             let selectionState = false;
             return (
               <div key={uniqKey}>
@@ -41,7 +41,7 @@ class TurnPanel extends Component {
         <form>
           {this.state.validSubmit &&
             this.state.validSubmit.cards.map(card => {
-              let uniqKey = Date.now().toString() + card.rank();
+              let uniqKey = Date.now().toString() + card._rank;
               let selectionState = false;
               return (
                 <div key={uniqKey}>

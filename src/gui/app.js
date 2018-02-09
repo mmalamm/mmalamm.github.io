@@ -1,7 +1,4 @@
 import React from "react";
-import Card from "./cardComponent";
-import handChecker from "../game/handChecker";
-import validHands from "../game/validHands";
 import PlayerPanel from "./playerPanel.js";
 
 class App extends React.Component {

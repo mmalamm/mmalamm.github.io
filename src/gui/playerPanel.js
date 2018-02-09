@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import TurnPanel from "./turnPanel";
 import HandPanel from "./handPanel";
-import validHands from "../game/validHands";
+
+import validHands from "../ai/vh1";
 
 const generateValidHands = dealtCards => {
-  console.log("cards: ", dealtCards);
-  const currentValidHands = validHands(dealtCards, 2);
-  console.log(currentValidHands);
+  // console.log("cards: ", dealtCards);
+  const currentValidHands = validHands(dealtCards, 1);
+  // console.log(currentValidHands);
   return currentValidHands;
 };
 
@@ -15,20 +16,21 @@ class PlayerPanel extends Component {
     super(props);
     this.player = props.player;
     this.state = {
-      cards: props.player.cards
+      cards: []
     };
   }
 
+  componentWillMount() {
+    this.player.myCards$.subscribe(cards => this.setState({ cards }));
+  }
+
   render() {
-    const isMyTurn = false;
-      // this.player.name === this.player.matchStatus.currentPlayerName;
     return (
-      <div style={{ backgroundColor: isMyTurn ? "#2E4053" : "black" }}>
+      <div>
         <HandPanel
           cards={this.state.cards}
           playTurn={this.player.playTurn}
           p={this.player}
-          name={this.player.name}
         />
       </div>
     );

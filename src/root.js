@@ -10,7 +10,7 @@ game.addPlayer("Hana");
 game.addPlayer("Zara");
 game.play();
 
-import App from "./gui/app1.js";
+import App from "./gui/app.js";
 
 const rootElement = document.getElementById("app");
 
