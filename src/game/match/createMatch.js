@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { nextPlayer, diffCards, createTracker, isValidTurn } from "./lib1";
+import { nextPlayer, diffCards, createTracker, isValidTurn } from "./lib";
 
 import Deck from "../deck";
 const dd = input => JSON.parse(JSON.stringify(input));

@@ -15,14 +15,19 @@ export const diffCards = (hCs, tCs) => {
   return output;
 };
 
-export const createTracker = ({
-  players,
-  currentPlayerName,
-  turns
-}) => ({
+const createTurn2Beat = turns => {
+  const t2b = turns
+    .slice(-3)
+    .filter(turn => turn.payload._type !== "PASS")
+    .pop()
+  return t2b ? t2b.payload.name : null;
+}
+
+export const createTracker = ({ players, currentPlayerName, turns }) => ({
   players: players.map(({ name, points }) => ({ name, points })),
   currentPlayerName,
-  last3Turns: turns.slice(-3)
+  last3Turns: turns.slice(-3),
+  turn2Beat: createTurn2Beat(turns)
 });
 
 export const isValidTurn = (trkr, turn) => {
