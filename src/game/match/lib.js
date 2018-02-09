@@ -23,10 +23,17 @@ const createTurn2Beat = turns => {
   return t2b ? t2b.payload.name : null;
 }
 
+const createCardsLeft = players => {
+  const output = {};
+  players.forEach(p => (output[p.name] = p.cards.length));
+  return output;
+};
+
 export const createTracker = ({ players, currentPlayerName, turns }) => ({
   players: players.map(({ name, points }) => ({ name, points })),
   currentPlayerName,
   last3Turns: turns.slice(-3),
+  cardsLeft: createCardsLeft(players),
   turn2Beat: createTurn2Beat(turns)
 });
 
