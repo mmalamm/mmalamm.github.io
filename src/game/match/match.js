@@ -18,12 +18,26 @@ class Match {
     // use subject.complete logic here
     this.matchStatus$.subscribe(d => {
       if (isOver(d)) {
+        const winnerScore = d.players.reduce(
+          (a, p) => a + d.cardsLeft[p.name],
+          0
+        );
+        const result = d.players.reduce((a, b) => {
+          const cL = d.cardsLeft[b.name];
+          a[b.name] = cL ? -cL : winnerScore;
+          return a;
+        }, {});
+        const updatedPlayers = d.players.map(({ name, points }) => ({
+          name,
+          points: points + result[name]
+        }));
         subject.next({
-          players: d.players,
+          players: updatedPlayers,
           isComplete: true,
-          winnerName: isOver(d).name
+          winnerName: isOver(d).name,
+          result
         });
-        subject.complete(d);
+        subject.complete();
       } else {
         subject.next(d);
       }
