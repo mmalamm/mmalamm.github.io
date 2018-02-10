@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 import Rx from "rxjs/Rx";
-import { isValidTurn, createTracker } from "./lib";
+import { isValidTurn, createTracker, isOver } from "./lib";
 import { processTurn } from "./createMatch";
 import createMatch from "./createMatch";
 // input: array of Player objects each with name and points
@@ -16,7 +16,18 @@ class Match {
     // insert game ending logic here as well:
     // .takeUntil(d => d.players.some(p => p.cards.length === 0));
     // use subject.complete logic here
-    this.matchStatus$.subscribe(d => subject.next(d));
+    this.matchStatus$.subscribe(d => {
+      if (isOver(d)) {
+        subject.next({
+          players: d.players,
+          isComplete: true,
+          winnerName: isOver(d).name
+        });
+        subject.complete(d);
+      } else {
+        subject.next(d);
+      }
+    });
     this.getMatchStatus$ = subject;
     // window.matchStats$ = subject;
     window.gs = () => match.getState();

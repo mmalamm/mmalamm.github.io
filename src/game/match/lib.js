@@ -15,6 +15,12 @@ export const diffCards = (hCs, tCs) => {
   return output;
 };
 
+export const isOver = trkr => {
+  return trkr.players.find(p => {
+    return trkr.cardsLeft[p.name] === 0;
+  });
+}
+
 const createTurn2Beat = turns => {
   const t2b = turns
     .slice(-3)
@@ -64,8 +70,8 @@ export const isValidTurn = (trkr, turn) => {
 ///////////////////////
 ///////////////////////
 
-export const isOver = match =>
-  Boolean(match.players.filter(p => p.cards.length === 0).length);
+// export const isOver = match =>
+  // Boolean(match.players.filter(p => p.cards.length === 0).length);
 
 export const createResult = match => {
   const winnerScore = match.players

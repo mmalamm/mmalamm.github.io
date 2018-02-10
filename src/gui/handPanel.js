@@ -11,9 +11,9 @@ class HandPanel extends Component {
   }
 
   componentWillMount() {
-    this.props.p.getMatchStatus$.subscribe(d => {
-      console.log(this.props.p.name, d);
-    });
+    // this.props.p.getMatchStatus$.subscribe(d => {
+    //   console.log(this.props.p.name, d);
+    // });
     this.props.p.myCards$.subscribe(d => {
       this.setState({ hand: d, userSelection: [], validSubmit: null });
     });
@@ -62,6 +62,7 @@ class HandPanel extends Component {
   };
   render() {
     const tracker = this.props.p.getMatchStatus$.getValue();
+    console.log(tracker);
     return (
       <div>
         <form>

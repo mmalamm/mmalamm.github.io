@@ -13,9 +13,14 @@ const getHand2Beat = tracker => {
     .pop();
   return turn2Beat ? turn2Beat.payload : null;
 };
+const has3Dice = cards =>
+  cards.find(c => c.value === "Three" && c.suit === "Diamonds");
 const createAiTurnPayload = (trkr, cards) => {
-  const hand2Beat = getHand2Beat(trkr);
   const myHands = validHands(cards).sort((a, b) => a._strength - b._strength);
+  if (has3Dice(cards)) {
+    return myHands.filter(h => has3Dice(h.cards)).pop();
+  }
+  const hand2Beat = getHand2Beat(trkr);
   const roundType = getRoundType(trkr);
   if (hand2Beat) {
     const nextLowestHand = myHands
@@ -24,8 +29,21 @@ const createAiTurnPayload = (trkr, cards) => {
       .shift();
     return nextLowestHand ? nextLowestHand : handChecker("PASS");
   } else {
-    const comboCheck = myHands.filter(h => h._type !== "Single").shift();
+    const comboCheck = myHands
+      .slice()
+      .filter(h => h._type === "Combo")
+      .shift();
     if (comboCheck) return comboCheck;
+    const tripleCheck = myHands
+      .slice()
+      .filter(h => h._type === "Triple")
+      .shift();
+    if (tripleCheck) return tripleCheck;
+    const notSingleCheck = myHands
+    .slice()
+    .filter(h => h._type !== "Single")
+    .shift();
+    if (notSingleCheck) return notSingleCheck;
     return myHands.shift();
   }
 };
