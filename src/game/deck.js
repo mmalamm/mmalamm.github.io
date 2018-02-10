@@ -1,6 +1,8 @@
 import Card from "./card";
 const compRank = (a, b) => a.rank() - b.rank();
 const ordRank = (a, b) => a.ord - b.ord;
+import chunk from "lodash/chunk";
+const _ = { chunk };
 
 class Deck {
   constructor() {
@@ -49,7 +51,6 @@ class Deck {
     const hands = _.chunk(this.shuffle().cards.slice(), 13).map(h =>
       h.sort(ordRank)
     );
-    // players.forEach((player, i) => (player.cards = hands[i]));
     return players.map(({ name, points }, i) => ({
       name,
       cards: hands[i],

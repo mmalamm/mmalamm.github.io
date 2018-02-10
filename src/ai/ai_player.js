@@ -40,9 +40,9 @@ const createAiTurnPayload = (trkr, cards) => {
       .shift();
     if (tripleCheck) return tripleCheck;
     const notSingleCheck = myHands
-    .slice()
-    .filter(h => h._type !== "Single")
-    .shift();
+      .slice()
+      .filter(h => h._type !== "Single")
+      .shift();
     if (notSingleCheck) return notSingleCheck;
     return myHands.shift();
   }

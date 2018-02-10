@@ -2,7 +2,8 @@ import handChecker from "../game/handChecker";
 const combine = (a, min) => {
   const fn = (n, src, got, all) => {
     if (n == 0) {
-      if (got.length > 0) {
+      // if (got.length > 0) {
+      if (got.length > 0 && got.length <= 5) {
         all[all.length] = got;
       }
       return;
