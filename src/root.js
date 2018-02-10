@@ -5,9 +5,9 @@ import Game from "./game/game";
 
 const name = "Ayesha";
 const game = new Game(name);
-game.addPlayer("Laila");
-game.addPlayer("Hana");
-game.addPlayer("Zara");
+game.addAiPlayer("Laila");
+game.addAiPlayer("Hana");
+game.addAiPlayer("Zara");
 game.play();
 
 import App from "./gui/app.js";

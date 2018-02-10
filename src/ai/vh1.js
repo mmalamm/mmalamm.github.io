@@ -24,11 +24,6 @@ const combine = (a, min) => {
   return hands
 };
 
-const generateValidHands = dealtCards => {
-  console.log("cards: ", dealtCards);
-  const currentValidHands = validHands(dealtCards, 2);
-  console.log(currentValidHands);
-  return currentValidHands;
-};
+const validHands = cards => combine(cards, 1);
 
-export default combine;
+export default validHands;
