@@ -74,7 +74,6 @@ export const createEndStatus = d => {
   }));
   return {
     players: updatedPlayers,
-    isComplete: true,
     winnerName: isOver(d).name,
     result
   };

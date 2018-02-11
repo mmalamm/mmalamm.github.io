@@ -7,8 +7,8 @@ class Game {
     const p0 = new Player(user);
     this.players = [p0];
     this.history = [];
-    this.currentMatch = null;
-    this.keepPlaying = true;
+    // this.currentMatch = null;
+    // this.keepPlaying = true;
   }
 
   addPlayer(user) {
@@ -20,14 +20,45 @@ class Game {
   }
 
   play() {
-    const match = new Match(this.players);
-    match.getMatchStatus$.subscribe(
-      d => console.log("match updated"),
-      e => console.log("match error"),
-      d => console.log("match completed")
-    );
-    this.currentMatch = match;
+    // const match = new Match(this.players);
+    // match.getMatchStatus$.subscribe(
+    //   d => console.log("match updated"),
+    //   e => console.log("match error"),
+    //   d => console.log("match completed")
+    // );
+    // this.currentMatch = match;
+    if (!(this.currentMatch)) {
+      runMatch(this).then(game => {
+        ///////////
+        window.ms = null;
+        window.gs = null;
+        //////////
+        const result = game.currentMatch.getMatchStatus$.getValue();
+        game.history.push(result);
+        console.log("here is your game:::>", game);
+        game.players.forEach(p => {
+          p.points += result.result[p.name];
+        });
+        game.currentMatch = null;
+      });
+    } else {
+      return console.log('finish this match first silly');
+    }
   }
 }
 
 export default Game;
+
+const runMatch = game => {
+  const players = game.players;
+  return new Promise((resolve, reject) => {
+    const match = new Match(players);
+    game.currentMatch = match;
+    match.getMatchStatus$.subscribe(
+      d => console.log("match updated"),
+      e => reject(Error(e)),
+      // d => resolve(match.getMatchStatus$.getValue())
+      d => resolve(game)
+    );
+  });
+};
