@@ -15,19 +15,16 @@ export const diffCards = (hCs, tCs) => {
   return output;
 };
 
-export const isOver = trkr => {
-  return trkr.players.find(p => {
-    return trkr.cardsLeft[p.name] === 0;
-  });
-}
+export const isOver = trkr =>
+  trkr.players.find(p => trkr.cardsLeft[p.name] === 0);
 
 const createTurn2Beat = turns => {
   const t2b = turns
     .slice(-3)
     .filter(turn => turn.payload._type !== "PASS")
-    .pop()
+    .pop();
   return t2b ? t2b.payload.name : null;
-}
+};
 
 const createCardsLeft = players => {
   const output = {};
@@ -64,22 +61,21 @@ export const isValidTurn = (trkr, turn) => {
   return output;
 };
 
-///////////////////////
-///////////////////////
-///////////////////////
-///////////////////////
-///////////////////////
-
-// export const isOver = match =>
-  // Boolean(match.players.filter(p => p.cards.length === 0).length);
-
-export const createResult = match => {
-  const winnerScore = match.players
-    .map(p => p.cards.length)
-    .reduce((a, b) => a + b);
-  const output = {};
-  match.players.forEach(
-    p => (output[p.name] = p.cards.length ? p.cards.length * -1 : winnerScore)
-  );
-  return output;
+export const createEndStatus = d => {
+  const winnerScore = d.players.reduce((a, p) => a + d.cardsLeft[p.name], 0);
+  const result = d.players.reduce((a, b) => {
+    const cL = d.cardsLeft[b.name];
+    a[b.name] = cL ? -cL : winnerScore;
+    return a;
+  }, {});
+  const updatedPlayers = d.players.map(({ name, points }) => ({
+    name,
+    points: points + result[name]
+  }));
+  return {
+    players: updatedPlayers,
+    isComplete: true,
+    winnerName: isOver(d).name,
+    result
+  };
 };
