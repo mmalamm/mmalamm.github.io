@@ -18,6 +18,7 @@ export const validateTurn = (tracker, hand, player) => {
 
 export const disablePass = (tracker, player) => {
   const isNotMyTurn = tracker.currentPlayerName !== player.name;
+  const amICool = true;
   const floorIsOpen = tracker.roundType === null;
   if (isNotMyTurn) return true;
   if (floorIsOpen) return true;
