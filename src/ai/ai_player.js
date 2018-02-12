@@ -1,6 +1,6 @@
 import validHands from "./vh1";
 import { validateTurn } from "../gui/lib";
-import handChecker from "../game/handChecker";
+import handChecker from "../big2/handChecker";
 const getRoundType = tracker => {
   const turn2Beat = tracker.last3Turns
     .filter(turn => turn.payload._type !== "PASS")

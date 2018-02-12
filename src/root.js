@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Game from "./game/game";
+import Game from "./big2/game/game";
 
 const name = "Ayesha";
 const game = new Game(name);

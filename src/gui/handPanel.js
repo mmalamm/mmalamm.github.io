@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "./cardComponent";
-import handChecker from "../game/handChecker";
+import handChecker from "../big2/handChecker";
 import TurnPanel from "./turnPanel";
 import { validateTurn, disablePass } from "./lib";
 

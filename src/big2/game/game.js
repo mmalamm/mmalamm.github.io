@@ -1,6 +1,6 @@
-import Player from "./player";
-import Match from "./match/match";
-import AiPlayer from "../ai/ai_player";
+import Player from "../player";
+import Match from "../match/match";
+import AiPlayer from "../../ai/ai_player";
 
 class Game {
   constructor(user) {
