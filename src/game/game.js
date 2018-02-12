@@ -20,13 +20,7 @@ class Game {
   }
 
   play() {
-    // const match = new Match(this.players);
-    // match.getMatchStatus$.subscribe(
-    //   d => console.log("match updated"),
-    //   e => console.log("match error"),
-    //   d => console.log("match completed")
-    // );
-    // this.currentMatch = match;
+    // const gameStore = createGameStore(this.players)
     if (!(this.currentMatch)) {
       runMatch(this).then(game => {
         ///////////
@@ -57,7 +51,6 @@ const runMatch = game => {
     match.getMatchStatus$.subscribe(
       d => console.log("match updated"),
       e => reject(Error(e)),
-      // d => resolve(match.getMatchStatus$.getValue())
       d => resolve(game)
     );
   });
