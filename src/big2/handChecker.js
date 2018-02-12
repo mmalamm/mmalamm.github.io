@@ -3,8 +3,7 @@ const maxRank = cards =>
   cards
     .slice()
     .sort(compRank)
-    .pop()
-    ._rank;
+    .pop()._rank;
 import uniq from "lodash/uniq";
 import isEqual from "lodash/isEqual";
 const _ = {
@@ -85,9 +84,10 @@ const handChecker = userInput => {
         }
         if (isFlush) {
           const str = maxRank(arr);
+          const mainCard = arr.find(c => c._rank === maxRank(arr));
           return {
             strength: str + 500,
-            name: `Flush of ${arr[0].suit}`
+            name: `Flush to ${mainCard.value} of ${mainCard.suit}`
           };
         }
         if (isStraight) {
@@ -102,7 +102,8 @@ const handChecker = userInput => {
           arr.filter(c => c.value === val).length === qty;
         const isHouse = (input => {
           const twoVals = uniqs.length === 2;
-          const hasTrip = countChecker(uniqs[0], 3) || countChecker(uniqs[1], 3);
+          const hasTrip =
+            countChecker(uniqs[0], 3) || countChecker(uniqs[1], 3);
           const hasDub = countChecker(uniqs[0], 2) || countChecker(uniqs[1], 2);
           return twoVals && hasTrip && hasDub;
         })(arr);
@@ -116,7 +117,8 @@ const handChecker = userInput => {
         }
         const isBomb = (input => {
           const twoVals = uniqs.length === 2;
-          const hasQuad = countChecker(uniqs[0], 4) || countChecker(uniqs[1], 4);
+          const hasQuad =
+            countChecker(uniqs[0], 4) || countChecker(uniqs[1], 4);
           return twoVals && hasQuad;
         })(arr);
         if (isBomb) {
