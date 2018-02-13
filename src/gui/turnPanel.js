@@ -15,26 +15,6 @@ class TurnPanel extends Component {
     this.setState({ validSubmit: nextProps.validHand });
   }
   render() {
-    const jsxContent = this.state.validSubmit ? (
-      <div>
-        <p>{this.state.validSubmit.name}</p>
-        <form>
-          {this.state.validSubmit.cards.map(card => {
-            let uniqKey = Date.now().toString() + card._rank;
-            let selectionState = false;
-            return (
-              <div key={uniqKey}>
-                <Card
-                  selected={selectionState}
-                  value={card.value}
-                  suit={card.suit}
-                />
-              </div>
-            );
-          })}
-        </form>
-      </div>
-    ) : null;
     return (
       <div>
         <p>{this.state.validSubmit && this.state.validSubmit.name}</p>
