@@ -25,11 +25,17 @@ class App extends React.Component {
 
   renderScores = () => (
     <ul>
-      {this.props.game.players.map((p, i) => (
-        <li key={i}>
-          {p.name}: {this.state.score[p.name]}
-        </li>
-      ))}
+      {this.props.game.players.map(({ name }, i) => {
+        const hist = this.state.history;
+        const result = hist[hist.length - 1].result;
+        const color = result[name] > 0 ? "green" : "red";
+        const diff = <span style={{ color }}>{result[name]}</span>;
+        return (
+          <li key={i}>
+            {name}: {this.state.score[name]} ({diff})
+          </li>
+        );
+      })}
     </ul>
   );
 
