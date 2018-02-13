@@ -26,7 +26,7 @@ class Match {
     this.getMatchStatus$ = subject;
 
     ///// testing purposes only
-    window.gs = () => match.getState();
+    window._ms = () => match.getState();
     window.ms = () => subject.getValue();
     /////
 

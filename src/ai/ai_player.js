@@ -1,6 +1,6 @@
 import validHands from "./vh1";
 import { validateTurn } from "../gui/lib";
-import handChecker from "../game/handChecker";
+import handChecker from "../big2/handChecker";
 const getRoundType = tracker => {
   const turn2Beat = tracker.last3Turns
     .filter(turn => turn.payload._type !== "PASS")
@@ -60,12 +60,14 @@ class AiPlayer {
     this.getMatchStatus$.subscribe(d => this.processTracker(d));
   };
   processTracker = trkr => {
-    const cards = this.myCards$.getValue();
-    if (trkr.currentPlayerName === this.name) {
-      const payload = createAiTurnPayload(trkr, cards);
-      const turn = { playerName: this.name, name: payload.name, payload };
-      this.playTurn(turn);
-    }
+    window.setTimeout(() => {
+      const cards = this.myCards$.getValue();
+      if (trkr.currentPlayerName === this.name) {
+        const payload = createAiTurnPayload(trkr, cards);
+        const turn = { playerName: this.name, name: payload.name, payload };
+        this.playTurn(turn);
+      }
+    }, 500);
   };
 }
 export default AiPlayer;

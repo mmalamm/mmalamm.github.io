@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "./cardComponent";
-import handChecker from "../game/handChecker";
+import handChecker from "../big2/handChecker";
 import TurnPanel from "./turnPanel";
 import { validateTurn, disablePass } from "./lib";
 
@@ -20,7 +20,6 @@ class HandPanel extends Component {
   }
 
   handleClick = e => {
-
     e.preventDefault();
     const turn = {
       playerName: this.props.p.name,
@@ -81,15 +80,13 @@ class HandPanel extends Component {
           })}
         </form>
         <TurnPanel validHand={this.state.validSubmit} />
-        <div>{this.props.p.name}</div>
+        <div>
+          {this.props.p.name} {this.props.score}
+        </div>
         <button
           disabled={!Boolean(this.state.validSubmit)}
           disabled={
-            !validateTurn(
-              tracker,
-              this.state.validSubmit,
-              this.props.p
-            )
+            !validateTurn(tracker, this.state.validSubmit, this.props.p)
           }
           onClick={this.handleClick}
         >

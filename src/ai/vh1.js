@@ -1,4 +1,4 @@
-import handChecker from "../game/handChecker";
+import handChecker from "../big2/handChecker";
 const combine = (a, min) => {
   const fn = (n, src, got, all) => {
     if (n == 0) {
