@@ -51,10 +51,9 @@ class Deck {
     const hands = _.chunk(this.shuffle().cards.slice(), 13).map(h =>
       h.sort(ordRank)
     );
-    return players.map(({ name, points }, i) => ({
+    return players.map(({ name }, i) => ({
       name,
       cards: hands[i],
-      points
     }));
   }
 }

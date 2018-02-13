@@ -31,6 +31,7 @@ class PlayerPanel extends Component {
           cards={this.state.cards}
           playTurn={this.player.playTurn}
           p={this.player}
+          score={this.props.score}
         />
       </div>
     );

@@ -68,12 +68,12 @@ export const createEndStatus = d => {
     a[b.name] = cL ? -cL : winnerScore;
     return a;
   }, {});
-  const updatedPlayers = d.players.map(({ name, points }) => ({
-    name,
-    points: points + result[name]
-  }));
+  // const updatedPlayers = d.players.map(({ name, points }) => ({
+  //   name,
+  //   points: points + result[name]
+  // }));
   return {
-    players: updatedPlayers,
+    // players: updatedPlayers,
     winnerName: isOver(d).name,
     result
   };

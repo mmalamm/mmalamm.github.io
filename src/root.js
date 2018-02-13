@@ -8,6 +8,7 @@ const game = new Game(name);
 game.addAiPlayer("Laila");
 game.addAiPlayer("Hana");
 game.addAiPlayer("Zara");
+game.start();
 game.play();
 
 import App from "./gui/app.js";
