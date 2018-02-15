@@ -15,6 +15,7 @@ export const createGame = players => {
     return a;
   }, {});
   const GAME_INIT_STATE = {
+    playerNames: players.map(p => p.name),
     score,
     history: [],
     matchInProgress: false
