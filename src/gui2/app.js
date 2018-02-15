@@ -3,7 +3,10 @@ PlayerInfo
 -name (gameStatus$)
 -score (gameStatus$)
 -img (gameStatus$)
+*/
 
+
+/*
 OpponentInfo 
 -number of cards left (matchStatus$)
 =PlayerInfo
@@ -19,6 +22,7 @@ PlayerPanel
 =MyCards
 -Pass/Play panel (player.playturn)
 
+//////////////////////////////
 getGameStatus$ = {
   playerNames: players.map(p => p.name),
   score,
@@ -26,5 +30,14 @@ getGameStatus$ = {
   matchInProgress: false
 }
 
+matchStatus$ = {
+  players: players.map(({ name, points }) => ({ name, points })),
+  currentPlayerName,
+  last3Turns: turns[{playerName, name, payload}]
+  cardsLeft: obj
+  turn2Beat: string
+}
+
+myCards$ = cards[{suit, value, _rank, ord}]
 */
 
