@@ -25,15 +25,15 @@ const suitsObj = {
 
 const Card = props => {
 
-  let styles = {
+  const styles = {
     color: props.suit === 'Diamonds' ||
       props.suit === 'Hearts' ?
       'red':
       'black',
     marginTop: props.selected ? '0rem':'1rem'
   };
-  let none = 'none';
-  let unselectable = {
+  const none = 'none';
+  const unselectable = {
     MozUserSelect: none,
     WebkitUserSelect: none,
     msUserSelect: none,
