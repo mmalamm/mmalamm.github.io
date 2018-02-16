@@ -8,7 +8,7 @@ function getRandomColor() {
   return color;
 }
 
-const renderIcon = name => {
+export const renderIcon = name => {
   const stilo = {
     height: 20,
     width: 20,

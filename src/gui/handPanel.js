@@ -3,6 +3,7 @@ import Card from "./cardComponent";
 import handChecker from "../big2/handChecker";
 import TurnPanel from "./turnPanel";
 import { validateTurn, disablePass } from "./lib";
+import { renderIcon } from "../gui2/player_info";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -79,8 +80,8 @@ class HandPanel extends Component {
             );
           })}
         </form>
-        <TurnPanel validHand={this.state.validSubmit} />
         <div>
+          {renderIcon(this.props.p.name)}
           {this.props.p.name} {this.props.score}
         </div>
         <button
