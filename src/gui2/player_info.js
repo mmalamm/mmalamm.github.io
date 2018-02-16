@@ -13,7 +13,9 @@ const renderIcon = name => {
     height: 20,
     width: 20,
     borderRadius: 10,
-    backgroundColor: getRandomColor()
+    backgroundColor: getRandomColor(),
+    textAlign: "center",
+    verticalAlign: "middle"
   };
   return <div style={stilo}>{name[0]}</div>;
 };

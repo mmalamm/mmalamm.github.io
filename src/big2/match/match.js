@@ -1,5 +1,8 @@
 import { createStore } from "redux";
-import Rx from "rxjs/Rx";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
+import "rxjs/add/observable/from";
 import { isValidTurn, createTracker, isOver, createEndStatus } from "./lib";
 import { processTurn } from "./createMatch";
 import createMatch from "./createMatch";
@@ -9,8 +12,8 @@ class Match {
   constructor(players) {
     const match = createMatch(players);
     this.processTurn = turn => match.dispatch(processTurn(turn));
-    const subject = new Rx.BehaviorSubject(match.getState());
-    this.matchStatus$ = Rx.Observable.from(match).map(match =>
+    const subject = new BehaviorSubject(match.getState());
+    this.matchStatus$ = Observable.from(match).map(match =>
       createTracker(match)
     );
 
@@ -31,8 +34,8 @@ class Match {
     /////
 
     players.forEach(p => {
-      const cardsSubject = new Rx.BehaviorSubject([]);
-      const pCards$ = Rx.Observable.from(match).map(
+      const cardsSubject = new BehaviorSubject([]);
+      const pCards$ = Observable.from(match).map(
         d => d.players.find(player => player.name === p.name).cards
       );
       // can probably decrease useless subscriptions with pairwise operator
