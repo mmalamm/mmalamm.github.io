@@ -11,6 +11,8 @@ const generateValidHands = dealtCards => {
   return currentValidHands;
 };
 
+//bring in playerInfo and turnPanel for self
+
 class PlayerPanel extends Component {
   constructor(props) {
     super(props);

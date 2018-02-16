@@ -1,5 +1,6 @@
 import React from "react";
 import PlayerPanel from "./playerPanel.js";
+import OpponentsPanel from "./opponentsPanel";
 
 class App extends React.Component {
   constructor(props) {
@@ -40,11 +41,15 @@ class App extends React.Component {
   );
 
   render() {
+    const p = this.props.player;
     return this.state.matchInProgress ? (
       <div className="container">
-        {this.props.game.players.map((p, i) => (
-          <PlayerPanel key={i} player={p} score={this.state.score[p.name]} />
-        ))}
+        <OpponentsPanel
+          score={this.state.score}
+          player={p}
+          trkr$={p.getMatchStatus$}
+        />
+        <PlayerPanel player={p} score={this.state.score[p.name]} />
       </div>
     ) : (
       <div className="container">

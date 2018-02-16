@@ -15,4 +15,4 @@ import App from "./gui/app.js";
 
 const rootElement = document.getElementById("app");
 
-ReactDOM.render(<App game={game} />, rootElement);
+ReactDOM.render(<App game={game} player={game.players[0]} />, rootElement);
