@@ -56,7 +56,7 @@ class App extends React.Component {
         <div>{this.state.history.slice().pop().winnerName} wins!</div>
         <div>Scores:</div>
         {this.renderScores()}
-        <button onClick={this.playMatch}>Next Match</button>
+        <button onClick={this.playMatch}>下一场比赛 Next Match</button>
       </div>
     );
   }
