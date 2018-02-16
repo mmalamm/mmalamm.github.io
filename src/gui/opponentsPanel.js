@@ -19,7 +19,7 @@ const OpponentPanel = props => {
   };
   return (
     <div style={style}>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{ display: "block" }}>
         <div>
           <OpponentCards num={props.numCardsLeft} />
         </div>
