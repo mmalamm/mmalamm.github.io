@@ -43,7 +43,7 @@ class App extends React.Component {
   render() {
     const p = this.props.player;
     return this.state.matchInProgress ? (
-      <div className="container">
+      <div>
         <OpponentsPanel
           score={this.state.score}
           player={p}

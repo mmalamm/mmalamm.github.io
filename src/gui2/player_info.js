@@ -21,7 +21,7 @@ const renderIcon = name => {
 const PlayerInfo = props => {
   return (
     <div>
-      <div>
+      <div style={{ display: "flex" }}>
         <div>{props.score}</div>
         <div>{renderIcon(props.name)}</div>
       </div>

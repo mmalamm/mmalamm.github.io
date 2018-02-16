@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-//import playerinfo
 import PlayerInfo from "../gui2/player_info";
-//import APPROPRIATE turn panel
 import TurnPanel from "../gui2/turn_panel";
 
 const OpponentCards = ({ num }) => {
-  const box = "牌 ▋";
-  return (
-    <div>
-      {box} x {num}
-    </div>
-  );
+  const box = "▋";
+  return <div style={{ color: "blue", fontSize: "18" }}>{box.repeat(num)}</div>;
 };
 
 const getPlayerTurn = (name, trkr) => {
@@ -18,10 +12,14 @@ const getPlayerTurn = (name, trkr) => {
 };
 
 const OpponentPanel = props => {
-  // takes numCardsLeft, score, name, turn
+  const style = {
+    width: "30rem",
+    flex: "flex-end",
+    marginRight: "2rem"
+  };
   return (
-    <div>
-      <div>
+    <div style={style}>
+      <div style={{ display: "flex" }}>
         <div>
           <OpponentCards num={props.numCardsLeft} />
         </div>
@@ -57,8 +55,12 @@ class OpponentsPanel extends Component {
     const opponents = this.state.players.filter(
       p => p.name !== this.props.player.name
     );
+    const style = {
+      display: "flex",
+      height: "20rem"
+    };
     return (
-      <div>
+      <div style={style}>
         {opponents.map(o => {
           return (
             <OpponentPanel

@@ -2,12 +2,9 @@ import PlayerInfo from "./player_info";
 import React from "react";
 
 const OpponentCards = ({ num }) => {
-  const box = "牌 ▋";
-  return (
-    <div>
-      {box} x {num}
-    </div>
-  );
+  // const box = "牌 ▋";
+  const box = "▋";
+  return <div style={{ color: "blue", fontSize: "18" }}>{box.repeat(num)}</div>;
 };
 
 const OpponentInfo = props => {

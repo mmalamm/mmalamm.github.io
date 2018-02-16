@@ -2,10 +2,10 @@ import React from "react";
 import Card from "./card";
 
 const TurnPanel = ({ turn }) => {
-  if (!turn) return null;
+  if (!turn) return <div>等候...</div>;
   const isPass = turn.payload._type === "PASS";
   if (isPass) {
-    const Pass = <div>PASS</div>;
+    const Pass = <div>过 PASS</div>;
     return Pass;
   } else {
     const validSubmit = turn.payload;
