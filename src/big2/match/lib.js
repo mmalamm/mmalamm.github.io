@@ -33,7 +33,7 @@ const createCardsLeft = players => {
 };
 
 export const createTracker = ({ players, currentPlayerName, turns }) => ({
-  players: players.map(({ name, points }) => ({ name, points })),
+  players: players.map(({ name }) => ({ name })),
   currentPlayerName,
   last3Turns: turns.slice(-3),
   cardsLeft: createCardsLeft(players),
@@ -68,12 +68,12 @@ export const createEndStatus = d => {
     a[b.name] = cL ? -cL : winnerScore;
     return a;
   }, {});
-  // const updatedPlayers = d.players.map(({ name, points }) => ({
-  //   name,
-  //   points: points + result[name]
-  // }));
+  const updatedPlayers = d.players.map(({ name, points }) => ({
+    name,
+    points: points + result[name]
+  }));
   return {
-    // players: updatedPlayers,
+    players: updatedPlayers,
     winnerName: isOver(d).name,
     result
   };
