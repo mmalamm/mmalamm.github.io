@@ -15,6 +15,7 @@ const getHand2Beat = tracker => {
 };
 const has3Dice = cards =>
   cards.find(c => c.value === "Three" && c.suit === "Diamonds");
+const getLowestOfTypeFn = hands => type => hands.filter(h => h._type).shift();
 const createAiTurnPayload = (trkr, cards) => {
   const myHands = validHands(cards).sort((a, b) => a._strength - b._strength);
   if (has3Dice(cards)) {
@@ -29,22 +30,13 @@ const createAiTurnPayload = (trkr, cards) => {
       .shift();
     return nextLowestHand ? nextLowestHand : handChecker("PASS");
   } else {
-    const comboCheck = myHands
-      .slice()
-      .filter(h => h._type === "Combo")
-      .shift();
-    if (comboCheck) return comboCheck;
-    const tripleCheck = myHands
-      .slice()
-      .filter(h => h._type === "Triple")
-      .shift();
-    if (tripleCheck) return tripleCheck;
-    const notSingleCheck = myHands
-      .slice()
-      .filter(h => h._type !== "Single")
-      .shift();
-    if (notSingleCheck) return notSingleCheck;
-    return myHands.shift();
+    const lowestOfType = getLowestOfTypeFn(myHands);
+    return (
+      lowestOfType("Combo") ||
+      lowestOfType("Triple") ||
+      lowestOfType("Double") ||
+      myHands.shift()
+    );
   }
 };
 class AiPlayer {

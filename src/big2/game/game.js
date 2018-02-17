@@ -13,8 +13,6 @@ class Game {
     const p0 = new Player(user);
     this.players = [p0];
     this.history = [];
-    // this.currentMatch = null;
-    // this.keepPlaying = true;
   }
 
   addPlayer(user) {
@@ -50,11 +48,6 @@ class Game {
         window.ms = null;
         //////////
         const result = game.currentMatch.getMatchStatus$.getValue();
-        // game.history.push(result);
-        // console.log("here is your game:::>", game);
-        // game.players.forEach(p => {
-        //   p.points += result.result[p.name];
-        // });
         game.processMatch(result);
 
         game.currentMatch = null;
