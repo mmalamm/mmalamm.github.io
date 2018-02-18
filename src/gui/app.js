@@ -53,6 +53,7 @@ class App extends React.Component {
       </div>
     ) : (
       <div className="container">
+        {renderReplay(this.state.history.slice().pop())}
         <div>{this.state.history.slice().pop().winnerName} wins!</div>
         <div>Scores:</div>
         {this.renderScores()}
@@ -61,5 +62,8 @@ class App extends React.Component {
     );
   }
 }
-
+const renderReplay = obj => {
+  console.log(obj);
+  return JSON.stringify(obj);
+};
 export default App;
