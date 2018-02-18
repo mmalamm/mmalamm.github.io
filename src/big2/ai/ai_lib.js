@@ -1,5 +1,5 @@
 import validHands from "./valid_hands";
-import handChecker from "../big2/handChecker";
+import handChecker from "../handChecker";
 
 const getRoundType = tracker => {
   const turn2Beat = tracker.last3Turns

@@ -12,7 +12,7 @@ game.start();
 game.play();
 
 //////////////
-import { generateValidHands } from "./ai/valid_hands";
+import { generateValidHands } from "./big2/ai/valid_hands";
 window.ayesha = "Ayesha";
 window.laila = "Laila";
 window.hana = "Hana";

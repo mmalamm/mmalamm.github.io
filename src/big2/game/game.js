@@ -4,7 +4,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/observable/from";
 import Player from "../player";
 import Match from "../match/match";
-import AiPlayer from "../../ai/ai_player";
+import AiPlayer from "../ai/ai_player";
 
 import { processMatch, setMatchInProgress, createGame } from "./createGame";
 
