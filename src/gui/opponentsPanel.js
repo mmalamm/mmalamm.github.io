@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PlayerInfo from "../gui2/player_info";
-import TurnPanel from "../gui2/turn_panel";
+import PlayerInfo from "./playerInfo";
+import TurnPanel from "./turnPanel";
 
 const OpponentCards = ({ num }) => {
   const box = "▋";

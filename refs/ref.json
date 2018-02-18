@@ -1,0 +1,38 @@
+{
+  "winnerName": "Ayesha",
+  "result": { "Ayesha": 16, "Laila": -6, "Hana": -1, "Zara": -9 },
+  "endState": {
+    "winningTurn": {
+      "playerName": "Ayesha",
+      "name": "Six of Spades",
+      "payload": {
+        "name": "Six of Spades",
+        "cards": [{ "suit": "Spades", "value": "Six", "_rank": 15, "ord": 23 }],
+        "_type": "Single",
+        "_strength": 115
+      }
+    },
+    "lostCards": {
+      "Laila": [
+        { "suit": "Clovers", "value": "Ace", "_rank": 45, "ord": 1 },
+        { "suit": "Hearts", "value": "Four", "_rank": 6, "ord": 14 },
+        { "suit": "Spades", "value": "Eight", "_rank": 23, "ord": 31 },
+        { "suit": "Clovers", "value": "Ten", "_rank": 29, "ord": 37 },
+        { "suit": "Hearts", "value": "Queen", "_rank": 38, "ord": 46 },
+        { "suit": "Clovers", "value": "King", "_rank": 41, "ord": 49 }
+      ],
+      "Hana": [{ "suit": "Diamonds", "value": "King", "_rank": 40, "ord": 48 }],
+      "Zara": [
+        { "suit": "Spades", "value": "Three", "_rank": 3, "ord": 11 },
+        { "suit": "Diamonds", "value": "Six", "_rank": 12, "ord": 20 },
+        { "suit": "Hearts", "value": "Six", "_rank": 14, "ord": 22 },
+        { "suit": "Diamonds", "value": "Seven", "_rank": 16, "ord": 24 },
+        { "suit": "Clovers", "value": "Seven", "_rank": 17, "ord": 25 },
+        { "suit": "Diamonds", "value": "Nine", "_rank": 24, "ord": 32 },
+        { "suit": "Spades", "value": "Nine", "_rank": 27, "ord": 35 },
+        { "suit": "Spades", "value": "Jack", "_rank": 35, "ord": 43 },
+        { "suit": "Diamonds", "value": "Queen", "_rank": 36, "ord": 44 }
+      ]
+    }
+  }
+}

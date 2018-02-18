@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Card from "./cardComponent";
 import handChecker from "../big2/handChecker";
-import TurnPanel from "./turnPanel";
 import { validateTurn, disablePass } from "./lib";
-import { renderIcon } from "../gui2/player_info";
+import { renderIcon } from "./playerInfo";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -12,9 +11,6 @@ class HandPanel extends Component {
   }
 
   componentWillMount() {
-    // this.props.p.getMatchStatus$.subscribe(d => {
-    //   console.log(this.props.p.name, d);
-    // });
     this.props.p.myCards$.subscribe(d => {
       this.setState({ hand: d, userSelection: [], validSubmit: null });
     });
@@ -85,7 +81,6 @@ class HandPanel extends Component {
           {this.props.p.name} {this.props.score}
         </div>
         <button
-          disabled={!Boolean(this.state.validSubmit)}
           disabled={
             !validateTurn(tracker, this.state.validSubmit, this.props.p)
           }
@@ -93,7 +88,12 @@ class HandPanel extends Component {
         >
           出牌 PLAY
         </button>
-        <button onClick={this.handlePass}>过 PASS</button>
+        <button
+          disabled={disablePass(tracker, this.props.p)}
+          onClick={this.handlePass}
+        >
+          过 PASS
+        </button>
       </div>
     );
   }
