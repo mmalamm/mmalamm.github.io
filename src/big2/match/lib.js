@@ -41,7 +41,7 @@ export const createTracker = ({ players, currentPlayerName, turns }) => ({
 });
 
 export const isValidTurn = (trkr, turn) => {
-  if(!turn.playerName === trkr.currentPlayerName) return false;
+  if (!turn.playerName === trkr.currentPlayerName) return false;
   if (
     trkr.last3Turns.length === 0 &&
     !turn.payload.cards.find(c => c.suit === "Diamonds" && c.value === "Three")
