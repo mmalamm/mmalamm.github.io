@@ -62,20 +62,29 @@ export const isValidTurn = (trkr, turn) => {
   );
 };
 
-export const createEndStatus = d => {
+const createLostCards = state => {
+  const losers = state.players.filter(p => p.cards.length);
+  return losers.reduce((a, l) => {
+    a[l.name] = l.cards;
+    return a;
+  }, {});
+};
+
+export const createEndStatus = (d, s) => {
   const winnerScore = d.players.reduce((a, p) => a + d.cardsLeft[p.name], 0);
   const result = d.players.reduce((a, b) => {
     const cL = d.cardsLeft[b.name];
     a[b.name] = cL ? -cL : winnerScore;
     return a;
   }, {});
-  const updatedPlayers = d.players.map(({ name, points }) => ({
-    name,
-    points: points + result[name]
-  }));
+  const { players } = d;
+  const winningTurn = d.last3Turns.pop();
   return {
-    players: updatedPlayers,
     winnerName: isOver(d).name,
-    result
+    result,
+    endState: {
+      winningTurn,
+      lostCards: createLostCards(s)
+    }
   };
 };

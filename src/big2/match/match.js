@@ -19,7 +19,7 @@ class Match {
     // use subject.complete logic here
     this.matchStatus$.subscribe(d => {
       if (isOver(d)) {
-        subject.next(createEndStatus(d));
+        subject.next(createEndStatus(d, match.getState()));
         subject.complete();
       } else {
         subject.next(d);
