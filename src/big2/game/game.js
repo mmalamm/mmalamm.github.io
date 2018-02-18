@@ -26,7 +26,7 @@ class Game {
   start() {
     const game = createGame(this.players);
     this.processMatch = result => game.dispatch(processMatch(result));
-    this.setMatchInProgress = () => game.dispatch(setMatchInProgress())
+    this.setMatchInProgress = () => game.dispatch(setMatchInProgress());
     const subject = new BehaviorSubject(game.getState());
     this.gameStatus$ = Observable.from(game);
     this.gameStatus$.subscribe(d => {
@@ -40,17 +40,29 @@ class Game {
     /////
   }
 
+  runMatch = () => {
+    const players = this.players;
+    const match = new Match(players);
+    this.currentMatch = match;
+    this.setMatchInProgress();
+    return new Promise((resolve, reject) => {
+      match.getMatchStatus$.subscribe(
+        d => console.log("match updated"),
+        e => reject(Error(e)),
+        d => resolve(match.getMatchStatus$.getValue())
+      );
+    });
+  };
+
   play() {
     if (!this.currentMatch) {
-      runMatch(this).then(game => {
+      this.runMatch().then(result => {
         ///////////
         window._ms = null;
         window.ms = null;
         //////////
-        const result = game.currentMatch.getMatchStatus$.getValue();
-        game.processMatch(result);
-
-        game.currentMatch = null;
+        this.processMatch(result);
+        this.currentMatch = null;
       });
     } else {
       return console.log("finish this match first silly");
@@ -59,17 +71,3 @@ class Game {
 }
 
 export default Game;
-
-const runMatch = game => {
-  const players = game.players;
-  const match = new Match(players);
-  game.currentMatch = match;
-  game.setMatchInProgress();
-  return new Promise((resolve, reject) => {
-    match.getMatchStatus$.subscribe(
-      d => console.log("match updated"),
-      e => reject(Error(e)),
-      d => resolve(game)
-    );
-  });
-};

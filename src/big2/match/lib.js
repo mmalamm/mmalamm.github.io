@@ -26,11 +26,11 @@ const createTurn2Beat = turns => {
   return t2b ? t2b.payload.name : null;
 };
 
-const createCardsLeft = players => {
-  const output = {};
-  players.forEach(p => (output[p.name] = p.cards.length));
-  return output;
-};
+const createCardsLeft = players =>
+  players.reduce((a, p) => {
+    a[p.name] = p.cards.length;
+    return a;
+  }, {});
 
 export const createTracker = ({ players, currentPlayerName, turns }) => ({
   players: players.map(({ name }) => ({ name })),
@@ -41,6 +41,7 @@ export const createTracker = ({ players, currentPlayerName, turns }) => ({
 });
 
 export const isValidTurn = (trkr, turn) => {
+  if(!turn.playerName === trkr.currentPlayerName) return false;
   if (
     trkr.last3Turns.length === 0 &&
     !turn.payload.cards.find(c => c.suit === "Diamonds" && c.value === "Three")
@@ -55,10 +56,10 @@ export const isValidTurn = (trkr, turn) => {
   if (!turn2Beat) return true;
   if (turn.payload._type === "PASS") return true;
   if (!handChecker(turn.payload.cards)) return false;
-  const output =
+  return (
     turn2Beat.payload._type == turn.payload._type &&
-    turn2Beat.payload._strength < turn.payload._strength;
-  return output;
+    turn2Beat.payload._strength < turn.payload._strength
+  );
 };
 
 export const createEndStatus = d => {
