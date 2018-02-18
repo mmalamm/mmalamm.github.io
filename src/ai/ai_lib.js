@@ -1,4 +1,4 @@
-import validHands from "./vh1";
+import validHands from "./valid_hands";
 import handChecker from "../big2/handChecker";
 
 const getRoundType = tracker => {

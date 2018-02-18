@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import TurnPanel from "./turnPanel";
 import HandPanel from "./handPanel";
 
-import validHands from "../ai/vh1";
-
-const generateValidHands = dealtCards => {
-  // console.log("cards: ", dealtCards);
-  const currentValidHands = validHands(dealtCards, 1);
-  // console.log(currentValidHands);
-  return currentValidHands;
-};
-
 //bring in playerInfo and turnPanel for self
 
 class PlayerPanel extends Component {
