@@ -1,9 +1,8 @@
-import handChecker from "../big2/handChecker";
+import handChecker from "../game/handChecker";
 const combine = (a, min) => {
   const fn = (n, src, got, all) => {
     if (n == 0) {
-      // if (got.length > 0) {
-      if (got.length > 0 && got.length <= 5) {
+      if (got.length > 0) {
         all[all.length] = got;
       }
       return;
@@ -18,13 +17,17 @@ const combine = (a, min) => {
     fn(i, a, [], all);
   }
   all.push(a);
-  const hands = all
+  return all
     .filter(set => set.length <= 5 && set.length !== 4)
     .filter(set => handChecker(set))
     .map(set => handChecker(set));
-  return hands
 };
 
-const validHands = cards => combine(cards, 1);
+const generateValidHands = dealtCards => {
+  console.log("cards: ", dealtCards);
+  const currentValidHands = validHands(dealtCards);
+  console.log(currentValidHands);
+  return currentValidHands;
+};
 
-export default validHands;
+export default combine;

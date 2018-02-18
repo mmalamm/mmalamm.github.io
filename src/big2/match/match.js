@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
@@ -45,8 +44,7 @@ class Match {
   }
   playTurn = turn => {
     const tracker = this.getMatchStatus$.getValue();
-    const isMyTurn = turn.playerName === tracker.currentPlayerName;
-    if (isMyTurn && isValidTurn(tracker, turn)) {
+    if (isValidTurn(tracker, turn)) {
       this.processTurn(turn);
     }
   };
