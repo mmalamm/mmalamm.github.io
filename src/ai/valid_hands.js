@@ -26,4 +26,6 @@ const combine = (a, min) => {
 
 const validHands = cards => combine(cards, 1);
 
+export const generateValidHands = cards => combine(cards, 2);
+
 export default validHands;

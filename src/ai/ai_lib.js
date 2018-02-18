@@ -15,7 +15,8 @@ const getHand2Beat = tracker => {
 };
 const has3Dice = cards =>
   cards.find(c => c.value === "Three" && c.suit === "Diamonds");
-const getLowestOfTypeFn = hands => type => hands.filter(h => h._type).shift();
+const getLowestOfTypeFn = hands => type =>
+  hands.filter(h => h._type === type).shift();
 const createAiTurnPayload = (trkr, cards) => {
   const myHands = validHands(cards).sort((a, b) => a._strength - b._strength);
   if (has3Dice(cards)) {

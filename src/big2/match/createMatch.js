@@ -24,7 +24,11 @@ const createMatch = players => {
   const MATCH_INIT_STATE = {
     players: dealtPlayers,
     currentPlayerName: firstPlayerName,
-    turns: []
+    turns: [],
+    initDeal: dealtPlayers.reduce((a, p) => {
+      a[p.name] = p.cards;
+      return a;
+    }, {})
   };
   const matchReducer = (state = MATCH_INIT_STATE, action) => {
     switch (action.type) {
@@ -44,6 +48,7 @@ const createMatch = players => {
         const updatedTurns = dd(state.turns).concat(dd(action.turn));
         const updatedCurrentPlayerName = nextPlayer(state, action.turn).name;
         return {
+          ...state,
           currentPlayerName: updatedCurrentPlayerName,
           players: updatedPlayers,
           turns: updatedTurns
