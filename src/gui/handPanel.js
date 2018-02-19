@@ -7,12 +7,26 @@ import { renderIcon } from "./playerInfo";
 class HandPanel extends Component {
   constructor(props) {
     super(props);
-    this.state = { hand: props.cards, userSelection: [], validSubmit: null };
+    this.state = {
+      hand: props.cards,
+      userSelection: [],
+      validSubmit: null,
+      disablePass: true
+    };
   }
 
   componentWillMount() {
-    this.props.p.myCards$.subscribe(d => {
-      this.setState({ hand: d, userSelection: [], validSubmit: null });
+    const { p } = this.props;
+    p.myCards$.subscribe(d => {
+      this.setState(s => ({
+        ...s,
+        hand: d,
+        userSelection: [],
+        validSubmit: null
+      }));
+    });
+    p.getMatchStatus$.subscribe(d => {
+      this.setState(s => ({ ...s, disablePass: disablePass(d, p) }));
     });
   }
 
@@ -88,10 +102,7 @@ class HandPanel extends Component {
         >
           出牌 PLAY
         </button>
-        <button
-          disabled={disablePass(tracker, this.props.p)}
-          onClick={this.handlePass}
-        >
+        <button disabled={this.state.disablePass} onClick={this.handlePass}>
           过 PASS
         </button>
       </div>

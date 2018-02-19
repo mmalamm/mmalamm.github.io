@@ -16,9 +16,17 @@ export const validateTurn = (tracker, hand, player) => {
   return output;
 };
 
+const getRoundType = tracker => {
+  if (!tracker.last3Turns) return null;
+  const turn2Beat = tracker.last3Turns
+    .filter(turn => turn.payload._type !== "PASS")
+    .pop();
+  return turn2Beat ? turn2Beat.payload._type : null;
+};
+
 export const disablePass = (tracker, player) => {
   const isNotMyTurn = tracker.currentPlayerName !== player.name;
-  const floorIsOpen = tracker.roundType === null;
+  const floorIsOpen = getRoundType(tracker) === null;
   if (isNotMyTurn) return true;
   if (floorIsOpen) return true;
   return false;

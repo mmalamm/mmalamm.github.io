@@ -5,6 +5,7 @@ import "rxjs/add/observable/from";
 import { isValidTurn, createTracker, isOver, createEndStatus } from "./lib";
 import { processTurn } from "./createMatch";
 import createMatch from "./createMatch";
+import isEqual from "lodash/isEqual";
 // input: array of Player objects each with name and points
 // output: array of Player objects with updated points
 class Match {
@@ -37,8 +38,12 @@ class Match {
       const pCards$ = Observable.from(match).map(
         d => d.players.find(player => player.name === p.name).cards
       );
-      // can probably decrease useless subscriptions with pairwise operator
-      pCards$.subscribe(c => cardsSubject.next(c));
+
+      pCards$.subscribe(c => {
+        const lastVal = cardsSubject.getValue();
+        if (!isEqual(lastVal, c)) cardsSubject.next(c);
+      });
+
       p.registerMatch(this.playTurn, this.getMatchStatus$, cardsSubject);
     });
   }

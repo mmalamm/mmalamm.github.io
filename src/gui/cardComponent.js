@@ -23,6 +23,15 @@ const suitsObj = {
   Diamonds: "♦"
 };
 
+const none = "none";
+const unselectable = {
+  MozUserSelect: none,
+  WebkitUserSelect: none,
+  msUserSelect: none,
+  pointerEvents: none,
+  marginLeft: "1rem"
+};
+
 const Card = props => {
   const styles = {
     backgroundColor: "#fdfdfd",
@@ -39,14 +48,6 @@ const Card = props => {
         ? "#b30000"
         : "#2f2f2f",
     marginTop: props.selected ? "0rem" : "1rem"
-  };
-  const none = "none";
-  const unselectable = {
-    MozUserSelect: none,
-    WebkitUserSelect: none,
-    msUserSelect: none,
-    pointerEvents: none,
-    marginLeft: "1rem"
   };
   return (
     <div style={styles}>

@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 }
 const renderReplay = obj => {
-  console.log(JSON.stringify(obj));
+  console.log(obj);
   return JSON.stringify(obj);
 };
 export default App;
