@@ -2,10 +2,10 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import "rxjs/add/observable/from";
+import isEqual from "lodash/isEqual";
 import { isValidTurn, createTracker, isOver, createEndStatus } from "./lib";
 import { processTurn } from "./createMatch";
 import createMatch from "./createMatch";
-import isEqual from "lodash/isEqual";
 // input: array of Player objects each with name and points
 // output: array of Player objects with updated points
 class Match {

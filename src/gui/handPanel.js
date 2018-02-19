@@ -37,7 +37,7 @@ class HandPanel extends Component {
       name: this.state.validSubmit.name,
       payload: this.state.validSubmit
     };
-    this.props.p.playTurn(turn);
+    this.props.playTurn(turn);
   };
   handlePass = e => {
     e.preventDefault();
