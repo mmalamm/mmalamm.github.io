@@ -23,22 +23,19 @@ const suitsObj = {
   Diamonds: "♦"
 };
 
-const Card = props => {
+const SmallCard = props => {
   const styles = {
     backgroundColor: "#fdfdfd",
     border: ".01rem solid gray",
-    margin: ".2rem",
-    marginLeft: "-1rem",
-    borderRadius: ".3rem",
-    width: "4rem",
+    borderRadius: ".2rem",
+    padding: ".1rem",
+    width: "2.5rem",
     boxShadow: "-.1rem .2rem 1rem gray",
-    cursor: "pointer",
-    zIndex: "-1",
+    marginLeft: "-.5rem",
     color:
       props.suit === "Diamonds" || props.suit === "Hearts"
         ? "#b30000"
-        : "#2f2f2f",
-    marginTop: props.selected ? "0rem" : "1rem"
+        : "#2f2f2f"
   };
   const none = "none";
   const unselectable = {
@@ -46,14 +43,17 @@ const Card = props => {
     WebkitUserSelect: none,
     msUserSelect: none,
     pointerEvents: none,
-    marginLeft: "1rem"
+    margin: ".2rem",
+    lineHeight: "1rem"
   };
   return (
     <div style={styles}>
-      <p style={unselectable}>{valsObj[props.value]}</p>
-      <p style={unselectable}>{suitsObj[props.suit]}</p>
+      <div style={{ textAlign: "center", width: "1.3rem" }}>
+        <p style={unselectable}> {valsObj[props.value]}</p>
+        <p style={unselectable}>{suitsObj[props.suit]}</p>
+      </div>
     </div>
   );
 };
 
-export default Card;
+export default SmallCard;

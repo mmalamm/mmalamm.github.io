@@ -8,9 +8,8 @@ class AiPlayer {
   }
   registerMatch = (playTurn, getMatchStatus$, myCards$) => {
     this.playTurn = playTurn;
-    this.getMatchStatus$ = getMatchStatus$;
     this.myCards$ = myCards$;
-    this.getMatchStatus$.subscribe(d => this.processTracker(d));
+    getMatchStatus$.subscribe(d => this.processTracker(d));
   };
   processTracker = trkr => {
     window.setTimeout(() => {
@@ -20,7 +19,7 @@ class AiPlayer {
         const turn = { playerName: this.name, name: payload.name, payload };
         this.playTurn(turn);
       }
-    }, 50);
+    }, 450);
   };
 }
 export default AiPlayer;

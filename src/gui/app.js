@@ -52,7 +52,7 @@ class App extends React.Component {
         <PlayerPanel player={p} score={this.state.score[p.name]} />
       </div>
     ) : (
-      <div className="container">
+      <div>
         {renderReplay(this.state.history.slice().pop())}
         <div>{this.state.history.slice().pop().winnerName} wins!</div>
         <div>Scores:</div>
