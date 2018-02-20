@@ -100,7 +100,7 @@ const createResult = num => {
     fontSize: "1.5rem",
     color: num > 0 ? "green" : "red"
   };
-  return <div style={stilo}>{num}</div>;
+  return <div style={stilo}>{num > 0 ? "+" + num : num}</div>;
 };
 
 const renderCardsLeft = obj => {
