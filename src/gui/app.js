@@ -41,8 +41,16 @@ class App extends React.Component {
   );
 
   render() {
+    /// cleanup needed
     const p = this.props.player;
-    return this.state.matchInProgress ? (
+    const { matchInProgress: mip, history: hist } = this.state;
+    const showStartScreen = !mip && !hist.length;
+    const showResultScreen = !mip && hist.length;
+    const showMatchScreen = mip;
+
+    return showStartScreen ? (
+      <button onClick={this.playMatch}>打比赛 Play Match</button>
+    ) : showMatchScreen ? (
       <div>
         <OpponentsPanel
           score={this.state.score}
@@ -51,7 +59,7 @@ class App extends React.Component {
         />
         <PlayerPanel player={p} score={this.state.score[p.name]} />
       </div>
-    ) : (
+    ) : showResultScreen ? (
       <div>
         {renderReplay(this.state.history.slice().pop())}
         <div>{this.state.history.slice().pop().winnerName} wins!</div>
@@ -59,7 +67,7 @@ class App extends React.Component {
         {this.renderScores()}
         <button onClick={this.playMatch}>下一场比赛 Next Match</button>
       </div>
-    );
+    ) : null;
   }
 }
 const renderReplay = obj => {

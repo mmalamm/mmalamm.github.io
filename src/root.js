@@ -9,7 +9,6 @@ game.addAiPlayer("Laila");
 game.addAiPlayer("Hana");
 game.addAiPlayer("Zara");
 game.start();
-game.play();
 
 //////////////
 import { generateValidHands } from "./big2/ai/valid_hands";
