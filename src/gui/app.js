@@ -1,9 +1,7 @@
 import React from "react";
 import PlayerPanel from "./playerPanel.js";
 import OpponentsPanel from "./opponentsPanel";
-import TurnPanel from "./turnPanel.js";
-import PlayerInfo from "./playerInfo.js";
-import SmallCard from "./smallCard";
+import EndScreen from "./endScreen";
 
 class App extends React.Component {
   constructor(props) {
@@ -27,43 +25,10 @@ class App extends React.Component {
     this.props.game.play();
   };
 
-  renderScores = () => (
-    <ul>
-      {this.props.game.players.map(({ name }) => {
-        const hist = this.state.history;
-        const result = hist[hist.length - 1].result;
-        const color = result[name] > 0 ? "green" : "red";
-        const diff = <span style={{ color }}>{result[name]}</span>;
-        return (
-          <li key={name}>
-            {name}: {this.state.score[name]} ({diff})
-          </li>
-        );
-      })}
-    </ul>
-  );
-
   renderReplay = () => {
-    const obj = this.state.history.slice().pop();
-    return (
-      <div>
-        <div>
-          <h1>{obj.winnerName} wins!</h1>
-          <TurnPanel turn={obj.endState.winningTurn} />
-          <div>
-            <PlayerInfo
-              name={obj.winnerName}
-              score={this.state.score[obj.winnerName]}
-            />
-            {createResult(obj.result[obj.winnerName])}
-          </div>
-        </div>
-        <div>
-          <h3>Remaining Cards:</h3>
-          {renderCardsLeft(obj.endState.lostCards)}
-        </div>
-      </div>
-    );
+    const histObj = this.state.history.slice().pop();
+    const scoreObj = this.state.score;
+    return <EndScreen histObj={histObj} scoreObj={scoreObj} />;
   };
 
   render() {
@@ -93,44 +58,5 @@ class App extends React.Component {
     ) : null;
   }
 }
-
-const createResult = num => {
-  const stilo = {
-    height: "2rem",
-    fontSize: "1.5rem",
-    color: num > 0 ? "green" : "red"
-  };
-  return <div style={stilo}>{num > 0 ? "+" + num : num}</div>;
-};
-
-const renderCardsLeft = obj => {
-  const stilo = { display: "flex", marginLeft: "1rem", height: "4rem" };
-  const cardsLeftJSX = [];
-  for (let loser in obj) {
-    const item = (
-      <div key={loser}>
-        <div>{loser}</div>
-        <div style={stilo}>
-          {obj[loser].map(card => {
-            let uniqKey = Date.now().toString() + card._rank;
-            let selectionState = false;
-            return (
-              <div key={uniqKey}>
-                <SmallCard
-                  selected={selectionState}
-                  value={card.value}
-                  suit={card.suit}
-                />
-              </div>
-            );
-          })}
-          {createResult(-obj[loser].length)}
-        </div>
-      </div>
-    );
-    cardsLeftJSX.push(item);
-  }
-  return cardsLeftJSX;
-};
 
 export default App;
