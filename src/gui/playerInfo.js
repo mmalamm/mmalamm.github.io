@@ -10,14 +10,13 @@ function getRandomColor() {
 
 export const renderIcon = name => {
   const stilo = {
-    height: 20,
-    width: 20,
-    borderRadius: 10,
-    backgroundColor: getRandomColor(),
-    textAlign: "center",
-    verticalAlign: "middle"
+    backgroundColor: getRandomColor()
   };
-  return <div style={stilo}>{name[0]}</div>;
+  return (
+    <div className="player-info" style={stilo}>
+      {name[0]}
+    </div>
+  );
 };
 
 const PlayerInfo = props => {
