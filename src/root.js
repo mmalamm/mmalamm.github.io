@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./gui/styles/styles.scss";
 
 import Game from "./big2/game/game";
 
