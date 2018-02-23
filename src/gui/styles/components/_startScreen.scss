@@ -1,6 +1,5 @@
 .startButton {
   font-size: 5vw;
-  background-color: #33cc00;
   cursor: pointer;
   height: 20vh;
   line-height: 20vh;
@@ -10,5 +9,34 @@
   position: relative;
   top: 50vh;
   transform: translate(0%, -50%);
+  background-color: #33cc00;
   border-bottom: 2vh #196619 solid;
+
+  &:hover {
+    background-color: #269900;
+    border-bottom: 2vh #0f3e0f solid;
+  }
+  &:active {
+    background-color: #1a6600;
+    border-bottom: 2vh #051505 solid;
+  }
+}
+.nextButton {
+  font-size: 2vw;
+  cursor: pointer;
+  height: 4vh;
+  line-height: 4vh;
+  width: 50vw;
+  text-align: center;
+  background-color: #33cc00;
+  border-bottom: 1vh #196619 solid;
+
+  &:hover {
+    background-color: #269900;
+    border-bottom: 1vh #0f3e0f solid;
+  }
+  &:active {
+    background-color: #1a6600;
+    border-bottom: 1vh #051505 solid;
+  }
 }
