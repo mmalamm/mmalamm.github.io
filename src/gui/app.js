@@ -2,6 +2,7 @@ import React from "react";
 import PlayerPanel from "./playerPanel.js";
 import OpponentsPanel from "./opponentsPanel";
 import EndScreen from "./endScreen";
+import StartScreen from "./startScreen";
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class App extends React.Component {
     const showMatchScreen = mip;
 
     return showStartScreen ? (
-      <button onClick={this.playMatch}>打比赛 Play Match</button>
+      <StartScreen playMatch={this.playMatch} />
     ) : showMatchScreen ? (
       <div>
         <OpponentsPanel

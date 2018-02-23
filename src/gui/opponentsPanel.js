@@ -15,7 +15,8 @@ const OpponentPanel = props => {
   const style = {
     width: "30rem",
     flex: "flex-end",
-    marginRight: "2rem"
+    marginRight: "2rem",
+    backgroundColor: props.isMyTurn ? "#00001a" : "inherit"
   };
   return (
     <div style={style}>
@@ -62,6 +63,7 @@ class OpponentsPanel extends Component {
     return (
       <div style={style}>
         {opponents.map(o => {
+          const isMyTurn = o.name === this.state.currentPlayerName;
           return (
             <OpponentPanel
               key={o.name}
@@ -69,6 +71,7 @@ class OpponentsPanel extends Component {
               score={this.props.score[o.name]}
               name={o.name}
               turn={getPlayerTurn(o.name, this.state)}
+              isMyTurn={isMyTurn}
             />
           );
         })}
