@@ -55,7 +55,7 @@ class App extends React.Component {
       <div>
         {this.renderReplay()}
         <div className="nextButton" onClick={this.playMatch}>
-          下一场比赛 Next Match
+          下一场比赛 Next Match ›››››
         </div>
       </div>
     ) : null;
