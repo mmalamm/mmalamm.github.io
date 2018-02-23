@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "./cardComponent";
 
-const Pass = <div>过 PASS</div>;
+const Pass = <div style={{ fontSize: "3rem", color: "red" }}>过 PASS</div>;
 
 const TurnPanel = ({ turn }) => {
   const jsx = (() => {
-    if (!turn) return <div>🤔 等候...</div>;
+    if (!turn) return <div style={{ fontSize: "2rem" }}>🤔 等候...</div>;
     const isPass = turn.payload._type === "PASS";
     if (isPass) {
       return Pass;
