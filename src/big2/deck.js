@@ -52,7 +52,7 @@ class Deck {
       h.sort(ordRank)
     );
     //https://en.wikipedia.org/wiki/Big_two#Reshuffling
-    while (hands.some(h => getHandVal(h) < 3)) {
+    while (hands.some(h => getHandVal(h) <= 3)) {
       hands = _.chunk(this.shuffle().cards.slice(), 13).map(h =>
         h.sort(ordRank)
       );

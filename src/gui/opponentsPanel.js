@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import PlayerInfo from "./playerInfo";
 import TurnPanel from "./turnPanel";
-
-const OpponentCards = ({ num }) => {
-  const box = "▋";
-  return <div style={{ color: "blue", fontSize: "18" }}>{box.repeat(num)}</div>;
-};
+import OpponentCards from "./components/opponentsPanel/opponentCards";
 
 const getPlayerTurn = (name, trkr) => {
   return trkr.last3Turns.find(t => t.playerName === name);
