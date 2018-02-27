@@ -16,31 +16,17 @@ const valsObj = {
   Two: "2"
 };
 
-const suitsObj = {
-  Spades: "♠",
-  Hearts: "♥",
-  Clovers: "♣",
-  Diamonds: "♦"
-};
-
-const none = "none";
-const unselectable = {
-  MozUserSelect: none,
-  WebkitUserSelect: none,
-  msUserSelect: none,
-  pointerEvents: none,
-  marginLeft: "1rem"
-};
-
 class DynamicImport extends React.Component {
   state = {
     component: null
   };
   componentWillMount() {
     this.props.load().then(component => {
-      this.setState(() => ({
-        component: component.default ? component.default : component
-      }));
+      if (component) {
+        this.setState(() => ({
+          component: component.default ? component.default : component
+        }));
+      }
     });
   }
   render() {
@@ -50,20 +36,15 @@ class DynamicImport extends React.Component {
 
 const Card = props => {
   const styles = {
-    color:
-      props.suit === "Diamonds" || props.suit === "Hearts"
-        ? "#b30000"
-        : "#2f2f2f",
-    marginTop: props.selected ? "0rem" : "1rem"
+    marginTop: props.selected ? "0rem" : "1rem",
+    marginLeft: "-2rem",
+    width: "4rem",
+    boxShadow: "-0.1rem 0.2rem 1rem gray",
+    cursor: "pointer"
   };
-  // return (
-  //   <div className="card" style={styles}>
-  //     <p style={unselectable}>{valsObj[props.value]}</p>
-  //     <p style={unselectable}>{suitsObj[props.suit]}</p>
-  //   </div>
-  // );
+
   return (
-    <div className="card" style={styles}>
+    <div style={styles}>
       <DynamicImport
         load={() =>
           import(`react-svg-loader!../../refs/pcards/${valsObj[props.value]}${
