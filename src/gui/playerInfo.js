@@ -21,7 +21,7 @@ export const renderIcon = name => {
 
 const PlayerInfo = props => {
   return (
-    <div>
+    <div style={{ margin: "1.5rem 1rem 0 0" }}>
       <div style={{ display: "flex" }}>
         <div>{props.score}</div>
         <div>{renderIcon(props.name)}</div>

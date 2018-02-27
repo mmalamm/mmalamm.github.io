@@ -16,12 +16,12 @@ const OpponentPanel = props => {
   };
   return (
     <div style={style}>
-      <div style={{ display: "block" }}>
-        <div>
-          <OpponentCards num={props.numCardsLeft} />
-        </div>
+      <div style={{ display: "flex" }}>
         <div>
           <PlayerInfo name={props.name} score={props.score} />
+        </div>
+        <div>
+          <OpponentCards num={props.numCardsLeft} />
         </div>
       </div>
       <div>

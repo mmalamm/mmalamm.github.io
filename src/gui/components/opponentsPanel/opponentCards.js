@@ -3,10 +3,10 @@ import CardLogo from "./cardLogo";
 
 const stilo = {
   backgroundColor: "#708090",
-  padding: ".5rem",
+  padding: ".3rem",
   borderRadius: ".25rem",
   marginLeft: "-2rem",
-  boxShadow: "-0.1rem 0.2rem 1rem black"
+  boxShadow: "-0.1rem 0.2rem .75rem black"
 };
 
 const OpponentCards = ({ num }) => {
@@ -16,7 +16,7 @@ const OpponentCards = ({ num }) => {
     </div>
   );
   const cards = [];
-  for (let i = 0; i <= num; i++) {
+  for (let i = 0; i < num; i++) {
     cards.push(box(i));
   }
   return (
