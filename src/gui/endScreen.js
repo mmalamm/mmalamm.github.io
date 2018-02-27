@@ -32,10 +32,11 @@ const renderCardsLeft = (obj, score) => {
   return cardsLeftJSX;
 };
 const createResult = num => {
+  const winner = num > 0;
   const stilo = {
     height: "2rem",
-    fontSize: "1.5rem",
-    color: num > 0 ? "green" : "red"
+    fontSize: winner ? "2.5rem" : "1.5rem",
+    color: winner ? "green" : "red"
   };
   return <div style={stilo}>{num > 0 ? "+" + num : num}</div>;
 };
