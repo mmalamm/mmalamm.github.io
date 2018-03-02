@@ -1,0 +1,36 @@
+.opponentsPanel {
+  display: flex;
+  height: 15rem;
+}
+
+.opponentPanel {
+  min-width: 18rem;
+}
+
+.opponentCards {
+  background-color: #708090;
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  margin-left: -2rem;
+  box-shadow: -0.1rem 0.2rem 0.75rem black;
+}
+.logo_ctnr {
+  width: 2rem;
+}
+.opponentCards__container {
+  display: flex;
+  margin: 1rem 2rem;
+}
+// @media (max-width: 500px) {
+//   .opponentsPanel {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   .opponentCards {
+//     background-color: #708090;
+//     padding: 0.1rem;
+//     border-radius: 0.2rem;
+//     margin-top: -0.2rem;
+//     box-shadow: -0.1rem 0.2rem 0.75rem black;
+//   }
+// }

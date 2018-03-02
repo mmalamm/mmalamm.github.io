@@ -12,7 +12,7 @@ const TurnPanel = ({ turn }) => {
     } else {
       const validSubmit = turn.payload;
       return (
-        <form>
+        <div className="turnPanel">
           {validSubmit.cards.map(card => {
             let uniqKey = Date.now().toString() + card._rank;
             let selectionState = false;
@@ -26,7 +26,7 @@ const TurnPanel = ({ turn }) => {
               </div>
             );
           })}
-        </form>
+        </div>
       );
     }
   })();

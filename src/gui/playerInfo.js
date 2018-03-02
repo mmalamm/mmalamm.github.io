@@ -13,7 +13,7 @@ export const renderIcon = name => {
     backgroundColor: getRandomColor()
   };
   return (
-    <div className="player-info" style={stilo}>
+    <div className="player-info__icon" style={stilo}>
       {name[0]}
     </div>
   );
@@ -21,12 +21,12 @@ export const renderIcon = name => {
 
 const PlayerInfo = props => {
   return (
-    <div>
-      <div style={{ display: "flex" }}>
+    <div className="player-info">
+      <div className="player-info__text">
+        <div>{props.name}</div>
         <div>{props.score}</div>
-        <div>{renderIcon(props.name)}</div>
       </div>
-      <div>{props.name}</div>
+      <div>{renderIcon(props.name)}</div>
     </div>
   );
 };

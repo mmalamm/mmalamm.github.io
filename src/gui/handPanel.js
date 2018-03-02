@@ -75,7 +75,7 @@ class HandPanel extends Component {
     console.log(tracker);
     return (
       <div>
-        <form>
+        <div className="handPanel">
           {this.state.hand.map(card => {
             let uniqKey = Date.now().toString() + card._rank;
             let selectionState = this.state.userSelection.find(c => c === card);
@@ -89,7 +89,7 @@ class HandPanel extends Component {
               </div>
             );
           })}
-        </form>
+        </div>
         <div>
           {renderIcon(this.props.p.name)}
           {this.props.p.name} {this.props.score}
