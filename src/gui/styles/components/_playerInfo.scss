@@ -1,4 +1,4 @@
-.player-info {
+.player-info__icon {
   height: 2rem;
   width: 2rem;
   line-height: 2rem;
@@ -6,4 +6,12 @@
   font-size: 1rem;
   font-weight: bolder;
   text-align: center;
+}
+
+.player-info {
+  display: flex;
+}
+
+.player-info__text {
+  text-align: right;
 }

@@ -25,13 +25,6 @@ const suitsObj = {
 
 const SmallCard = props => {
   const styles = {
-    backgroundColor: "#fdfdfd",
-    border: ".01rem solid gray",
-    borderRadius: ".2rem",
-    padding: ".1rem",
-    width: "2.5rem",
-    boxShadow: "-.1rem .2rem 1rem gray",
-    marginLeft: "-.5rem",
     color:
       props.suit === "Diamonds" || props.suit === "Hearts"
         ? "#b30000"
@@ -47,10 +40,10 @@ const SmallCard = props => {
     lineHeight: "1rem"
   };
   return (
-    <div style={styles}>
-      <div style={{ textAlign: "center", width: "1.3rem" }}>
-        <p style={unselectable}> {valsObj[props.value]}</p>
-        <p style={unselectable}>{suitsObj[props.suit]}</p>
+    <div className="smallCard" style={styles}>
+      <div className="smallCardTextContainer">
+        <p className="unselectable__small">{valsObj[props.value]}</p>
+        <p className="unselectable__small">{suitsObj[props.suit]}</p>
       </div>
     </div>
   );

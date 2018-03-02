@@ -42,8 +42,10 @@ const Card = props => {
   };
   return (
     <div className="card" style={styles}>
-      <p style={unselectable}>{valsObj[props.value]}</p>
-      <p style={unselectable}>{suitsObj[props.suit]}</p>
+      <div className="cardTextContainer">
+        <p className="unselectable__big">{valsObj[props.value]}</p>
+        <p className="unselectable__big">{suitsObj[props.suit]}</p>
+      </div>
     </div>
   );
 };

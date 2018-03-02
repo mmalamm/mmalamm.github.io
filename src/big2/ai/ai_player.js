@@ -19,7 +19,7 @@ class AiPlayer {
         const turn = { playerName: this.name, name: payload.name, payload };
         this.playTurn(turn);
       }
-    }, 450);
+    }, 0);
   };
 }
 export default AiPlayer;
