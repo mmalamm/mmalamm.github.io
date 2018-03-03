@@ -23,15 +23,6 @@ const suitsObj = {
   Diamonds: "♦"
 };
 
-const none = "none";
-const unselectable = {
-  MozUserSelect: none,
-  WebkitUserSelect: none,
-  msUserSelect: none,
-  pointerEvents: none,
-  marginLeft: "1rem"
-};
-
 const Card = props => {
   const styles = {
     color:

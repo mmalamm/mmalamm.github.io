@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import PlayerInfo from "./playerInfo";
-import TurnPanel from "./turnPanel";
-import OpponentCards from "./components/opponentsPanel/opponentCards";
+import PlayerInfo from "../common/playerInfo";
+import TurnPanel from "../common/turnPanel";
+import OpponentCards from "./opponentCards";
 
 const getPlayerTurn = (name, trkr) => {
   return trkr.last3Turns.find(t => t.playerName === name);

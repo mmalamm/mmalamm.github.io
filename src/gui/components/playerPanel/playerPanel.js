@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HandPanel from "./handPanel";
-import TurnPanel from "./turnPanel";
+import TurnPanel from "../common/turnPanel";
 
 //bring in playerInfo and turnPanel for self
 

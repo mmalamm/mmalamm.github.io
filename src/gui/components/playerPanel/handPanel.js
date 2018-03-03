@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Card from "./cardComponent";
-import handChecker from "../big2/handChecker";
 import { validateTurn, disablePass } from "./lib";
-import { renderIcon } from "./playerInfo";
+import Card from "../common/cardComponent";
+import PlayerInfo from "../common/playerInfo";
+import handChecker from "../../../big2/handChecker";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -90,10 +90,7 @@ class HandPanel extends Component {
             );
           })}
         </div>
-        <div>
-          {renderIcon(this.props.p.name)}
-          {this.props.p.name} {this.props.score}
-        </div>
+        <PlayerInfo name={this.props.p.name} score={this.props.score} />
         <button
           disabled={
             !validateTurn(tracker, this.state.validSubmit, this.props.p)

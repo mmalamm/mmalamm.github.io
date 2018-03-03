@@ -1,7 +1,7 @@
 import React from "react";
-import TurnPanel from "./turnPanel.js";
-import PlayerInfo from "./playerInfo.js";
-import SmallCard from "./smallCard";
+import TurnPanel from "../common/turnPanel.js";
+import PlayerInfo from "../common/playerInfo.js";
+import SmallCard from "../common/smallCard";
 const renderCardsLeft = (obj, score) => {
   const stilo = { display: "flex", marginLeft: "1rem", height: "4rem" };
   const cardsLeftJSX = [];

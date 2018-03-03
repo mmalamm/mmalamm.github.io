@@ -22,7 +22,7 @@ window.gh = playerName => generateValidHands(_ms().initDeal[playerName]);
 window.sh = playerName => _ms().players.find(p => p.name === playerName).cards;
 //////////////
 
-import App from "./gui/app.js";
+import App from "./gui/components/app";
 
 const rootElement = document.getElementById("app");
 

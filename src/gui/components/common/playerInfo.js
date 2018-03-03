@@ -19,14 +19,14 @@ export const renderIcon = name => {
   );
 };
 
-const PlayerInfo = props => {
+const PlayerInfo = ({ name, score }) => {
   return (
     <div className="player-info">
       <div className="player-info__text">
-        <div>{props.name}</div>
-        <div>{props.score}</div>
+        <div>{name}</div>
+        <div>{score}</div>
       </div>
-      <div>{renderIcon(props.name)}</div>
+      <div>{renderIcon(name)}</div>
     </div>
   );
 };

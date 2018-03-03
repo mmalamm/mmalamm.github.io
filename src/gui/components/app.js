@@ -1,8 +1,8 @@
 import React from "react";
-import PlayerPanel from "./playerPanel.js";
-import OpponentsPanel from "./opponentsPanel";
-import EndScreen from "./endScreen";
-import StartScreen from "./startScreen";
+import PlayerPanel from "./playerPanel/playerPanel";
+import OpponentsPanel from "./opponentsPanel/opponentsPanel";
+import EndScreen from "./endScreen/endScreen";
+import StartScreen from "./startScreen/startScreen";
 
 class App extends React.Component {
   constructor(props) {
