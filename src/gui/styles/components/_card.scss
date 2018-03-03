@@ -1,3 +1,27 @@
+.smallCard {
+  background-color: #fdfdfd;
+  border-radius: 0.2rem;
+  box-shadow: -0.1rem 0.2rem 1rem gray;
+  margin-left: -0.5rem;
+  padding: 0.1rem;
+  width: 2.5rem;
+}
+
+.unselectable__small {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+  margin: 0.2rem;
+  line-height: 1rem;
+}
+
+.smallCardTextContainer {
+  text-align: right;
+  width: 1.3rem;
+}
+
 @media (min-width: 500px) {
   .card {
     background-color: $off-white;
@@ -16,30 +40,6 @@
     -ms-user-select: none;
     pointer-events: none;
     margin-left: 1rem;
-  }
-
-  .smallCard {
-    background-color: #fdfdfd;
-    border-radius: 0.2rem;
-    box-shadow: -0.1rem 0.2rem 1rem gray;
-    margin-left: -0.5rem;
-    padding: 0.1rem;
-    width: 2.5rem;
-  }
-
-  .unselectable__small {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none;
-    margin: 0.2rem;
-    line-height: 1rem;
-  }
-
-  .smallCardTextContainer {
-    text-align: right;
-    width: 1.3rem;
   }
 }
 

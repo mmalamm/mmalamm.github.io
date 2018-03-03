@@ -3,6 +3,7 @@ import { validateTurn, disablePass } from "./lib";
 import Card from "../common/cardComponent";
 import PlayerInfo from "../common/playerInfo";
 import handChecker from "../../../big2/handChecker";
+import ButtonsPanel from "./buttonsPanel";
 
 class HandPanel extends Component {
   constructor(props) {
@@ -91,17 +92,14 @@ class HandPanel extends Component {
           })}
         </div>
         <PlayerInfo name={this.props.p.name} score={this.props.score} />
-        <button
-          disabled={
+        <ButtonsPanel
+          disablePlay={
             !validateTurn(tracker, this.state.validSubmit, this.props.p)
           }
-          onClick={this.handleClick}
-        >
-          出牌 PLAY
-        </button>
-        <button disabled={this.state.disablePass} onClick={this.handlePass}>
-          过 PASS
-        </button>
+          disablePass={this.state.disablePass}
+          playTurn={this.handleClick}
+          passTurn={this.handlePass}
+        />
       </div>
     );
   }
