@@ -81,7 +81,11 @@ class HandPanel extends Component {
             let uniqKey = Date.now().toString() + card._rank;
             let selectionState = this.state.userSelection.find(c => c === card);
             return (
-              <div key={uniqKey} onClick={this.toggleSelect(card)}>
+              <div
+                className="handPanel__cardContainer"
+                key={uniqKey}
+                onClick={this.toggleSelect(card)}
+              >
                 <Card
                   selected={selectionState}
                   value={card.value}
@@ -91,7 +95,9 @@ class HandPanel extends Component {
             );
           })}
         </div>
-        <PlayerInfo name={this.props.p.name} score={this.props.score} />
+        <div className="playerPanel__playerInfo">
+          <PlayerInfo name={this.props.p.name} score={this.props.score} />
+        </div>
         <ButtonsPanel
           disablePlay={
             !validateTurn(tracker, this.state.validSubmit, this.props.p)

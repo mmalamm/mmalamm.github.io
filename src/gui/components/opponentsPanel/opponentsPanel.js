@@ -13,7 +13,7 @@ const OpponentPanel = props => {
   };
   return (
     <div className="opponentPanel" style={style}>
-      <div style={{ display: "flex" }}>
+      <div className="opponentPanel__infoCards" style={{ display: "flex" }}>
         <div style={{ margin: "1.5rem 1rem 0 0" }}>
           <PlayerInfo name={props.name} score={props.score} />
         </div>

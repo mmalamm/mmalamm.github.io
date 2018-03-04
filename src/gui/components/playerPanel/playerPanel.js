@@ -29,8 +29,10 @@ class PlayerPanel extends Component {
     const backgroundColor =
       this.state.currentPlayerName === this.player.name ? "#00001a" : "inherit";
     return (
-      <div style={{ backgroundColor }}>
-        <TurnPanel turn={this.state.turn} />
+      <div className="playerPanel" style={{ backgroundColor }}>
+        <div className="playerPanel__turnPanel">
+          <TurnPanel turn={this.state.turn} />
+        </div>
         <HandPanel
           cards={this.state.cards}
           playTurn={this.player.playTurn}
