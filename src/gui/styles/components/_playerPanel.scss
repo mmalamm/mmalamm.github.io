@@ -6,6 +6,18 @@
   }
 }
 
+@media (orientation: landscape) {
+  .handPanel {
+    height: 12vh;
+  }
+  .playerPanel {
+    height: 50vh;
+  }
+  .playerPanel__turnPanel {
+    height: 12vh;
+  }
+}
+
 @media (max-width: 500px) {
   .handPanel {
     display: flex;

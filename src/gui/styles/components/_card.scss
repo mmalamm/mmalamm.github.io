@@ -53,6 +53,30 @@
   }
 }
 
+@media (orientation: landscape) {
+  .card {
+    background-color: #fdfdfd;
+    border-radius: 0.2rem;
+    box-shadow: -0.1rem 0.2rem 1rem gray;
+    padding: 0.1rem;
+    width: 2.5rem;
+    height: 10vh;
+  }
+  .cardTextContainer {
+    text-align: right;
+    width: 1.3rem;
+  }
+  .unselectable__big {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+    margin: 0.2rem;
+    line-height: 1rem;
+  }
+}
+
 @media (max-width: 500px) {
   .logo_ctnr {
     width: 0.5rem;

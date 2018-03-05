@@ -17,7 +17,7 @@ const TurnPanel = ({ turn }) => {
             let uniqKey = Date.now().toString() + card._rank;
             let selectionState = false;
             return (
-              <div key={uniqKey}>
+              <div key={uniqKey} className="turnPanel__cardContainer">
                 <Card
                   selected={selectionState}
                   value={card.value}
@@ -30,7 +30,7 @@ const TurnPanel = ({ turn }) => {
       );
     }
   })();
-  return <div style={{ height: "9rem" }}>{jsx}</div>;
+  return jsx;
 };
 
 export default TurnPanel;

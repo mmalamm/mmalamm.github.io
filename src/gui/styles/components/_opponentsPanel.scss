@@ -3,10 +3,6 @@
   height: 15rem;
 }
 
-.opponentPanel {
-  min-width: 18rem;
-}
-
 .opponentCards {
   background-color: #708090;
   padding: 0.3rem;
@@ -21,6 +17,16 @@
   display: flex;
   margin: 1rem 2rem;
 }
+
+@media (orientation: landscape) {
+  .opponentsPanel {
+    height: 45vh;
+  }
+  .opponentPanel {
+    width: 30vw;
+  }
+}
+
 @media (max-width: 500px) {
   .opponentsPanel {
     display: flex;
