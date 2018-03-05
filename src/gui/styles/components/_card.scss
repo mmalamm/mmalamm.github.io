@@ -22,6 +22,13 @@
   width: 1.3rem;
 }
 
+.redSuit {
+  color: #b30000;
+}
+.blkSuit {
+  color: #2f2f2f;
+}
+
 @media (min-width: 500px) {
   .card {
     background-color: $off-white;
@@ -31,8 +38,11 @@
     margin-left: -1rem;
     padding: 0.01rem;
     width: 4rem;
+    margin-top: 1rem;
   }
-
+  .selected {
+    margin-top: 0rem;
+  }
   .unselectable__big {
     user-select: none;
     -moz-user-select: none;
@@ -51,11 +61,13 @@
     background-color: #fdfdfd;
     border-radius: 0.2rem;
     box-shadow: -0.1rem 0.2rem 1rem gray;
-    margin-left: -0.5rem;
     padding: 0.1rem;
     width: 2.5rem;
+    height: 6vh;
   }
-
+  .selected {
+    margin-left: 2rem;
+  }
   .cardTextContainer {
     text-align: right;
     width: 1.3rem;

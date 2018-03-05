@@ -24,15 +24,14 @@ const suitsObj = {
 };
 
 const Card = props => {
-  const styles = {
-    color:
-      props.suit === "Diamonds" || props.suit === "Hearts"
-        ? "#b30000"
-        : "#2f2f2f",
-    marginTop: props.selected ? "0rem" : "1rem"
-  };
+  const colorClass =
+    props.suit === "Diamonds" || props.suit === "Hearts"
+      ? " redSuit"
+      : " blkSuit";
+  const selected = props.selected ? " selected" : "";
+  const clss = `card${selected}${colorClass}`;
   return (
-    <div className="card" style={styles}>
+    <div className={clss}>
       <div className="cardTextContainer">
         <p className="unselectable__big">{valsObj[props.value]}</p>
         <p className="unselectable__big">{suitsObj[props.suit]}</p>
