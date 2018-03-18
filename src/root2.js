@@ -11,5 +11,7 @@ game.addAiPlayer("Hana");
 game.addAiPlayer("Zara");
 game.start();
 
-debugger;
 import App from "./gui2/components/app";
+
+const rootElement = document.getElementById("app");
+ReactDOM.render(<App game={game} />, rootElement);

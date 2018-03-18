@@ -4,7 +4,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentWillMount() {}
+  componentWillMount() {
+    debugger;
+  }
 
   render() {
     return <h1>hello dog</h1>;
