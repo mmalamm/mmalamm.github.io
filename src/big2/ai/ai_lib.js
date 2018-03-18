@@ -1,5 +1,5 @@
 import validHands from "./valid_hands";
-import handChecker from "../handChecker";
+import { PASS } from "../handChecker";
 
 const getRoundType = tracker => {
   const turn2Beat = tracker.last3Turns
@@ -17,7 +17,17 @@ const has3Dice = cards =>
   cards.find(c => c.value === "Three" && c.suit === "Diamonds");
 const getLowestOfTypeFn = hands => type =>
   hands.filter(h => h._type === type).shift();
-const createAiTurnPayload = (trkr, cards) => {
+export const processTracker = (trkr, myCards$, name, playTurn) => {
+  window.setTimeout(() => {
+    const cards = myCards$.getValue();
+    if (trkr.currentPlayerName === name) {
+      const payload = createAiTurnPayload(trkr, cards);
+      const turn = { playerName: name, name: payload.name, payload };
+      playTurn(turn);
+    }
+  }, 200);
+};
+export const createAiTurnPayload = (trkr, cards) => {
   const myHands = validHands(cards).sort((a, b) => a._strength - b._strength);
   if (has3Dice(cards)) {
     return myHands.filter(h => has3Dice(h.cards)).pop();
@@ -29,7 +39,7 @@ const createAiTurnPayload = (trkr, cards) => {
       .filter(h => h._type === roundType)
       .filter(h => h._strength > hand2Beat._strength)
       .shift();
-    return nextLowestHand ? nextLowestHand : handChecker("PASS");
+    return nextLowestHand ? nextLowestHand : PASS;
   } else {
     const lowestOfType = getLowestOfTypeFn(myHands);
     return (
@@ -40,4 +50,3 @@ const createAiTurnPayload = (trkr, cards) => {
     );
   }
 };
-export default createAiTurnPayload;

@@ -20,6 +20,8 @@ class Hand {
   }
 }
 
+export const PASS = new Hand("PASS", [], -1, "PASS");
+
 const handChecker = userInput => {
   if (userInput === "PASS") return new Hand("PASS", [], -1, "PASS");
   const arr = userInput.slice().sort(compRank),

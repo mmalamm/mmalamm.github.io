@@ -5,10 +5,10 @@ const SET_MATCH_IN_PROGRESS = "SET_MATCH_IN_PROGRESS";
 export const processMatch = payload => ({
   type: PROCESS_MATCH,
   payload
-})
+});
 export const setMatchInProgress = () => ({
   type: SET_MATCH_IN_PROGRESS
-})
+});
 export const createGame = players => {
   const score = players.reduce((a, b) => {
     a[b.name] = 100;
@@ -29,6 +29,7 @@ export const createGame = players => {
         }, {});
         const updatedHistory = state.history.concat([action.payload]);
         return {
+          ...state,
           score: updatedScore,
           history: updatedHistory,
           matchInProgress: false
@@ -37,7 +38,7 @@ export const createGame = players => {
         return {
           ...state,
           matchInProgress: true
-        }
+        };
       default:
         return state;
     }

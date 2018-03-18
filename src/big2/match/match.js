@@ -13,12 +13,12 @@ class Match {
     const match = createMatch(players);
     this.processTurn = turn => match.dispatch(processTurn(turn));
     const subject = new BehaviorSubject(match.getState());
-    this.matchStatus$ = Observable.from(match).map(match =>
+    const matchStatus$ = Observable.from(match).map(match =>
       createTracker(match)
     );
 
     // use subject.complete logic here
-    this.matchStatus$.subscribe(d => {
+    matchStatus$.subscribe(d => {
       if (isOver(d)) {
         subject.next(createEndStatus(d, match.getState()));
         subject.complete();

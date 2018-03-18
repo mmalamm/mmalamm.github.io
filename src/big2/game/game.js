@@ -28,8 +28,8 @@ class Game {
     this.processMatch = result => game.dispatch(processMatch(result));
     this.setMatchInProgress = () => game.dispatch(setMatchInProgress());
     const subject = new BehaviorSubject(game.getState());
-    this.gameStatus$ = Observable.from(game);
-    this.gameStatus$.subscribe(d => {
+    const gameStatus$ = Observable.from(game);
+    gameStatus$.subscribe(d => {
       subject.next(d);
     });
     this.getGameStatus$ = subject;
