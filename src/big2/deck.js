@@ -1,5 +1,4 @@
 import Card from "./card";
-const compRank = (a, b) => a.rank() - b.rank();
 const ordRank = (a, b) => a.ord - b.ord;
 import chunk from "lodash/chunk";
 const _ = { chunk };
@@ -65,26 +64,15 @@ class Deck {
   }
 }
 
-const getHandVal = h => {
-  return h.reduce((a, b) => {
-    return a + getDealVal(b);
-  }, 0);
-};
+const getHandVal = h => h.reduce((a, b) => a + getDealVal(b), 0);
 
-const getDealVal = c => {
-  switch (c.value) {
-    case "Jack":
-      return 1;
-    case "Queen":
-      return 2;
-    case "King":
-      return 3;
-    case "Ace":
-      return 4;
-    case "Two":
-      return 5;
-    default:
-      return 0;
-  }
-};
+const getDealVal = ({ value: v }) =>
+  ({
+    Jack: 1,
+    Queen: 2,
+    King: 3,
+    Ace: 4,
+    Two: 5
+  }[v] || 0);
+
 export default Deck;
